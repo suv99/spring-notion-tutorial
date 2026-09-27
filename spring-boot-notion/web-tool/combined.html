@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Master Combined Knowledge Base</title>
+  <link rel="stylesheet" href="./beautify.css">
+  <style>
+    .combined-toc {
+      background: var(--bg-tertiary, #F6F8FA);
+      border: 1px solid var(--border-light, #E5E7EB);
+      border-radius: var(--radius-lg, 12px);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .combined-toc-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--text-heading, #111827);
+    }
+    .combined-toc-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.5rem 1rem;
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    .combined-toc-item a {
+      color: var(--text-link, #3B82F6);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .combined-toc-item a:hover {
+      text-decoration: underline;
+    }
+    .combined-section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px dashed var(--border-light, #E5E7EB);
+    }
+    .combined-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      background: var(--bg-tertiary, #F6F8FA);
+      border: 1px solid var(--border-light, #E5E7EB);
+      border-radius: var(--radius-md, 8px);
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    .combined-section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--text-heading, #111827);
+    }
+    .combined-file-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff !important;
+      background: var(--accent-primary, #3B82F6);
+      border-radius: 6px;
+      text-decoration: none !important;
+      transition: all 150ms ease;
+    }
+    .combined-file-link:hover {
+      background: var(--text-link-hover, #2563EB);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <article class="page sans">
+    <header>
+      <h1 class="page-title">Master Combined Knowledge Base</h1>
+      <p class="page-description">Combined master view containing all exported workspace articles.</p>
+    </header>
+    <div class="page-body">
+      <nav class="combined-toc" aria-label="Table of Contents">
+        <h2 class="combined-toc-title">Table of Contents (10 Articles)</h2>
+        <ol class="combined-toc-list">
+          
+          <li class="combined-toc-item">
+            <a href="#section-1">1. Another ConditionalOnMissingBean Example</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-2">2. Beans</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-3">3. Components</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-4">4. Configurations</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-5">5. Dependency injection</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-6">6. Profiles</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-7">7. Project structure</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-8">8. Spring vs Spring Boot</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-9">9. Quick Concepts</a>
+          </li>
+          <li class="combined-toc-item">
+            <a href="#section-10">10. Spring boot</a>
+          </li>
+        </ol>
+      </nav>
+
+      
+        <section class="combined-section" id="section-1">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">1. Another ConditionalOnMissingBean Example</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Beans/Another ConditionalOnMissingBean Example 3d034c0b29c98001a598ef9181bad713.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Another ConditionalOnMissingBean Example</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="3d034c0b-29c9-80f9-9e13-e971ad1c1427" class="" dir="auto"><strong>Code Example</strong></p><p id="3d034c0b-29c9-80c1-b1c6-c65c8c66a10a" class="" dir="auto">Imagine building a notification module where a default console logger is used unless a real email sender is provided.</p><p id="3d034c0b-29c9-8076-a139-e523945db201" class="" dir="auto">Java</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d034c0b-29c9-804d-9621-f1113df99d12" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">public interface NotificationService{
+    void send(String message);
+}
+
+// 1. The Default Implementation
+@Component
+public class ConsoleNotificationService implements NotificationService{
+    @Override
+    public void send(String message){
+        System.out.println(&quot;CONSOLE LOG: &quot; + message);
+    }
+}
+
+// 2. The Configuration with Conditional Logic
+@Configuration
+public class NotificationConfig{
+
+    @Bean
+    @ConditionalOnMissingBean(NotificationService.class)
+    public NotificationService defaultNotificationService(){
+        // This only gets created if no other NotificationService bean exists
+        return new ConsoleNotificationService();
+    }
+}</code></pre><p id="3d034c0b-29c9-80cf-bbd5-f5ed29b92222" class="" dir="auto">If you start your application right now, Spring Boot injects <code>ConsoleNotificationService</code>. However, if you add your own custom implementation elsewhere in your project:</p><p id="3d034c0b-29c9-8093-80e9-cb61e7b79757" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-80b5-855b-f1736cf90f69" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">// 3. The Custom Override created by the developer
+@Component
+public class SendGridNotificationService implements NotificationService{
+    @Override
+    public void send(String message){
+        // Logic to send real emails via SendGrid API
+        System.out.println(&quot;EMAIL SENT VIA SENDGRID: &quot; + message);
+    }
+}</code></pre><p id="3d034c0b-29c9-803b-960b-e3efe09919ce" class="" dir="auto">Spring detects that a <code>NotificationService</code> bean (<code>SendGridNotificationService</code>) is already present. It automatically backs off from creating the conditional default, ensuring your custom logic takes over without throwing duplicate bean definition errors.</p><p id="3d034c0b-29c9-8041-b1c0-eadb1c6598d5" class="" dir="auto"><strong>Startup Workflow</strong></p><ol type="1" id="3d034c0b-29c9-8092-b59d-ca92d070a752" class="numbered-list" start="1" dir="auto"><li><strong>Component Scan Phase</strong><p id="3d034c0b-29c9-8025-a9aa-e66c25871b3b" class="" dir="auto">Spring Boot boots up and begins scanning the project&#x27;s packages for classes annotated with <code>@Component</code>, <code>@Service</code>, or <code>@Configuration</code>.</p></li></ol><ol type="1" id="3d034c0b-29c9-80c0-9072-c5439bd1ffae" class="numbered-list" start="2" dir="auto"><li><strong>Detecting Custom Implementations</strong><p id="3d034c0b-29c9-80b3-aa60-f7085aef433f" class="" dir="auto">Spring discovers the developer-created <code>SendGridNotificationService</code> (annotated with <code>@Component</code>) and prepares to register it into the application context as a <code>NotificationService</code> bean.</p></li></ol><ol type="1" id="3d034c0b-29c9-8010-963c-fd486cca722e" class="numbered-list" start="3" dir="auto"><li><strong>Evaluating Conditional Logic</strong><p id="3d034c0b-29c9-8060-8f55-d89c4aa11a26" class="" dir="auto">Spring processes the <code>NotificationConfig</code> class and reaches the <code>defaultNotificationService()</code> method, which is guarded by <code>@ConditionalOnMissingBean(NotificationService.class)</code>.</p></li></ol><ol type="1" id="3d034c0b-29c9-80f4-a252-cdcfb06cf825" class="numbered-list" start="4" dir="auto"><li><strong>Condition Check Result</strong><p id="3d034c0b-29c9-80db-abf4-dd33d9ad3954" class="" dir="auto">The container checks its registry, sees that <code>SendGridNotificationService</code> has already been registered, and determines that a <code>NotificationService</code> bean is <em>not</em> missing. The condition evaluates to false.</p></li></ol><ol type="1" id="3d034c0b-29c9-80b6-b5d8-e8a10c98ead3" class="numbered-list" start="5" dir="auto"><li><strong>Backing Off</strong><p id="3d034c0b-29c9-80a0-a40b-de36bafa3e03" class="" dir="auto">Spring Boot skips the execution of <code>defaultNotificationService()</code>. The fallback console logger is never instantiated, avoiding duplicate bean definitions.</p></li></ol><ol type="1" id="3d034c0b-29c9-80cb-9ff3-c27331163804" class="numbered-list" start="6" dir="auto"><li><strong>Runtime Injection</strong><p id="3d034c0b-29c9-8073-a404-de7ecbd2fbb5" class="" dir="auto">Whenever a component requests a <code>NotificationService</code>, Spring seamlessly injects the custom <code>SendGridNotificationService</code>, ensuring email delivery runs by default without manual wiring changes.</p></li></ol></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-2">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">2. Beans</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Beans 3d034c0b29c980138305de365f17fa5d.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Beans</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="3d034c0b-29c9-809d-9fd6-d05ba12ccf86" class="" dir="auto">In plain English: <strong>A Spring Bean is simply a Java object that Spring manages for you.</strong></p><p id="3d034c0b-29c9-80bc-a893-efd27c2591da" class="" dir="auto">Normally, you do <code>MyClass obj = new MyClass()</code>. With Spring Boot, you let Spring create and hold the object in its <strong>IoC Container</strong> (the &quot;warehouse&quot;). Whenever you need it, Spring hands it to you (Dependency Injection).</p><p id="3d034c0b-29c9-80b0-9187-d4fabbf0a197" class="" dir="auto">Here is the golden rule: <strong>Every Service, Repository, Controller, Configuration, and Component you write is a Bean.</strong></p><p id="3d034c0b-29c9-80f8-a3b9-c1b6c258a0bc" class="" dir="auto">But <em>how</em> do you tell Spring to manage an object? There are <strong>two distinct ways</strong>, and you must know both.</p><p id="3d034c0b-29c9-809a-a67f-fb567a7dea0a" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8027-966b-d0b975e159cf" class="" dir="auto"><strong>Method 1: Class-Level Annotations (The Easy 95% Way)</strong></h3><p id="3d034c0b-29c9-808c-b931-d7d318a270fe" class="" dir="auto">You put an annotation directly on your class. Spring scans the package, finds it, and creates a Bean automatically.</p><table id="3d034c0b-29c9-8070-b568-d0a6a7e33763" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3d034c0b-29c9-80ad-811d-d90c6ed8b2f2" dir="ltr"><th id="OfXR" class="simple-table-header-color simple-table-header"><strong>Annotation</strong></th><th id="sXXB" class="simple-table-header-color simple-table-header"><strong>What it means practically</strong></th><th id="wK{U" class="simple-table-header-color simple-table-header"><strong>When to use</strong></th></tr></thead><tbody><tr id="3d034c0b-29c9-80d3-8614-d2b72ae47226" dir="ltr"><td id="OfXR" class=""><code>@Component</code></td><td id="sXXB" class="">&quot;Spring, manage this generic class.&quot;</td><td id="wK{U" class="">Utility classes, helpers.</td></tr><tr id="3d034c0b-29c9-800b-8d68-df7e52f8562c" dir="ltr"><td id="OfXR" class=""><code>@Service</code></td><td id="sXXB" class="">&quot;Spring, manage this as business logic.&quot;</td><td id="wK{U" class="">All your business logic classes.</td></tr><tr id="3d034c0b-29c9-80fe-af88-d5d4f0b4a26c" dir="ltr"><td id="OfXR" class=""><code>@Repository</code></td><td id="sXXB" class="">&quot;Spring, manage this for DB access.&quot;</td><td id="wK{U" class="">JPA Repositories, DAO classes. (Also catches DB exceptions).</td></tr><tr id="3d034c0b-29c9-8003-8ee0-e78472772408" dir="ltr"><td id="OfXR" class=""><code>@Controller</code> / <code>@RestController</code></td><td id="sXXB" class="">&quot;Spring, manage this as a web endpoint.&quot;</td><td id="wK{U" class="">REST API controllers.</td></tr></tbody></table><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d034c0b-29c9-806b-9c0e-ea191e0895f3" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">// 1. Tell Spring to manage this class as a Bean
+@Service 
+public class TaxCalculator {
+
+    // No @Autowired needed on constructor for a single constructor
+    public TaxCalculator() {
+        System.out.println(&quot;TaxCalculator Bean Created!&quot;);
+    }
+
+    public double calculate(double amount) {
+        return amount * 0.18;
+    }
+}
+
+// 2. Some other class asks for it
+@RestController
+public class BillController {
+    private final TaxCalculator taxCalculator;
+
+    // Spring injects the TaxCalculator Bean here
+    public BillController(TaxCalculator taxCalculator) {
+        this.taxCalculator = taxCalculator;
+    }
+}</code></pre><h3 id="3d034c0b-29c9-8065-bde0-f6134c83e3ff" class="" dir="auto"><strong>Method 2: The </strong><code><strong>@Bean</strong></code><strong> Method (The Explicit 5% Way)</strong></h3><p id="3d034c0b-29c9-8013-82b6-e783703fa147" class="" dir="auto">You <strong>cannot</strong> put <code>@Component</code> on third-party classes (like <code>RestTemplate</code>, <code>ObjectMapper</code>, or <code>AmazonS3Client</code>) because you don&#x27;t own the source code!</p><p id="3d034c0b-29c9-80c8-897f-e23d794bf877" class="" dir="auto">The Limitation: First-Party vs. Third-Party Code</p><ul id="3d034c0b-29c9-8009-9a57-e4b7d510b3a1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>First-Party Code (Your Code):</strong> You wrote it. You can open <code>UserService.java</code> in your IDE and put <code>@Component</code> or <code>@Service</code> directly above the class definition. Spring scans your project, finds the annotation, and creates the bean.</li></ul><ul id="3d034c0b-29c9-80d7-bf80-e1bf486545d8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Third-Party Code (External Libraries):</strong> These are pre-compiled and read-only. You cannot open the class file for <code>RestTemplate</code> or <code>ObjectMapper</code> to add annotations to it.</li></ul><p id="3d034c0b-29c9-80be-9403-e7ffd52015a9" class="" dir="auto">For these, you manually tell Spring: <em>&quot;Hey, when I call this method, take the object it returns and manage it as a Bean.&quot;</em></p><p id="3d034c0b-29c9-80db-bcad-ce39471d3093" class="" dir="auto">You do this inside a class annotated with <code>@Configuration</code>.</p><h3 id="3d034c0b-29c9-801a-8479-fe3b3abb5f64" class="" dir="auto">The Solution: <code>@Configuration</code> and <code>@Bean</code></h3><p id="3d034c0b-29c9-8064-8284-ceee12e2c34c" class="" dir="auto">Because you cannot tell the third-party class to register <em>itself</em>, you must tell Spring how to create an instance of it inside your own code using a <code>@Configuration</code> class and a <code>@Bean</code> method:</p><p id="3d034c0b-29c9-80f1-b5e7-f51b88113cf1" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-807a-b418-c57135e941ad" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Configuration
+public class AppConfig{
+
+    // Spring runs this method and manages the returned instance as a bean
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+
+    @Bean
+    public ObjectMapper objectMapper(){
+        return new ObjectMapper();
+    }
+}</code></pre><p id="3d034c0b-29c9-80f9-a364-ff1f8a614892" class="" dir="auto">Once defined this way, Spring places these instances into the ApplicationContext, allowing you to inject them into your services just like any other <code>@Component</code>:</p><p id="3d034c0b-29c9-80f9-bcc5-e88a4b6e4c75" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8019-bde8-f3627315d13a" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+@RequiredArgsConstructor
+public class ApiClientService{
+
+    private final RestTemplate restTemplate; // Injected automatically
+    private final ObjectMapper objectMapper; // Injected automatically
+}</code></pre><p id="3d034c0b-29c9-8051-acdb-cc30898ea348" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8084-9030-eff0679a9f9d" class="" dir="auto"><strong>The Most Important Spring Boot Twist: </strong><code><strong>@ConditionalOnMissingBean</strong></code></h3><p id="3d034c0b-29c9-8017-80d9-c77cb223d841" class="" dir="auto">This is what makes Spring Boot <em>magical</em>. When you autowire a Bean, Spring Boot says: <em>&quot;I have a default Bean, but if you create your own, I&#x27;ll use yours instead.&quot;</em></p><p id="3d034c0b-29c9-801f-9d13-e7948f87182b" class="" dir="auto">Spring Boot has auto-configuration classes running in the background for common infrastructure (like Jackson&#x27;s <code>ObjectMapper</code>, a <code>DataSource</code>, or builders).</p><p id="3d034c0b-29c9-80db-bd2a-e773715ab2ff" class="" dir="auto">Almost every default bean definition in Spring Boot is marked with this annotation:</p><p id="3d034c0b-29c9-803b-956e-c8f46a9b7292" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-802d-9776-d3fb7268fe97" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Bean
+@ConditionalOnMissingBean // &quot;Only create this if the user hasn&#x27;t created one!&quot;
+public ObjectMapper objectMapper(){
+    return new ObjectMapper();
+}</code></pre><p id="3d034c0b-29c9-80e7-8d59-c3c7a171a711" class="" dir="auto">When your application boots up:</p><ol type="1" id="3d034c0b-29c9-8053-9e5a-edb022988b05" class="numbered-list" start="1" dir="auto"><li><strong>Spring checks your code first:</strong> Did you declare your own <code>@Bean</code> for that class?</li></ol><ol type="1" id="3d034c0b-29c9-80d0-b12d-fe374cda0044" class="numbered-list" start="2" dir="auto"><li><strong>If YES:</strong> Spring registers your bean. The conditional check fails, so Spring Boot <strong>backs off</strong> and does not create its default.</li></ol><ol type="1" id="3d034c0b-29c9-8071-9b66-ff66f092fa2f" class="numbered-list" start="3" dir="auto"><li><strong>If NO:</strong> Spring Boot creates and registers its default bean for you.</li></ol><p id="3d034c0b-29c9-80bd-bba5-e78aef4078a0" class="" dir="auto">an example where Spring Boot <strong>does</strong> provide a full default bean that completely steps aside when you write yours, look at Jackson&#x27;s <code>ObjectMapper</code>:</p><p id="3d034c0b-29c9-8019-b12c-d4fd254fd959" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8035-ab34-ebaaba4f4c69" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Configuration
+public class JacksonConfig{
+
+    // The moment you define this, Spring Boot disables its auto-configured ObjectMapper
+    @Bean
+    public ObjectMapper customObjectMapper(){
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        return mapper;
+    }
+}</code></pre><p id="3d034c0b-29c9-8097-8379-f7367171ad95" class="" dir="auto">Without this method, Spring Boot supplies a default <code>ObjectMapper</code>. With this method present, Spring Boot&#x27;s <code>@ConditionalOnMissingBean</code> detects your bean, backs off, and wires your custom version everywhere across your application.</p><figure id="3d034c0b-29c9-8001-a598-ef9181bad713" class="link-to-page"><a href="Beans/Another%20ConditionalOnMissingBean%20Example%203d034c0b29c98001a598ef9181bad713.html" data-notion-page-id="3d034c0b-29c9-8001-a598-ef9181bad713" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Another ConditionalOnMissingBean Example</a></figure><p id="3d034c0b-29c9-80a4-b9f4-fa294062cda8" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8081-a5d0-e0760a700fc5" class="" dir="auto"><strong>Bean Scopes (Singleton vs Prototype)</strong></h3><p id="3d034c0b-29c9-80bd-9b05-c0672a2d2aa1" class="" dir="auto">By default, <strong>every Bean in Spring Boot is a Singleton</strong>. This means Spring creates <strong>only one instance</strong> of that class for the entire application, and every class that injects it gets the <strong>exact same object</strong> in memory.</p><p id="3d034c0b-29c9-8047-8978-ee0f70ee2d8c" class="" dir="auto"><mark class="highlight-red" data-notion-highlight="red"><strong>Singleton Scope (Default)</strong></mark><mark class="highlight-red" data-notion-highlight="red"><br/></mark>When a bean is defined as a singleton, the Spring container creates <strong>only one shared instance</strong> of that bean for the entire application context. Every time that bean is requested or injected anywhere in your code, Spring returns the exact same object reference. This is ideal for stateless components like service layers, data access objects (DAOs), and utility beans.</p><p id="3d034c0b-29c9-8081-8509-e857413d2af6" class="" dir="auto"><mark class="highlight-red" data-notion-highlight="red"><strong>Prototype Scope</strong></mark><mark class="highlight-red" data-notion-highlight="red"><br/></mark>When a bean is configured as a prototype, a <strong>brand-new instance</strong> is created <em>every single time</em> the bean is requested from the container. If you inject or request a prototype bean in multiple places, you receive a completely distinct object instance each time. This is necessary for stateful objects where data shouldn&#x27;t be shared or overwritten globally.</p><p id="3d034c0b-29c9-80da-bef5-e2ac24248e28" class="" dir="auto"><strong>Code Example</strong></p><p id="3d034c0b-29c9-80e2-acb0-ef5e11869058" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8003-be08-df79028bb5c2" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Component
+// Singleton scope (default) - only one instance exists application-wide
+public class InventoryService{
+    public void checkStock(){
+        // Stateless business logic
+    }
+}
+
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+// Prototype scope - a fresh instance is generated on every request
+public class ShoppingCart{
+    private List&lt;String&gt; items = new ArrayList&lt;&gt;();
+
+    public void addItem(String item){
+        items.add(item);
+    }
+}</code></pre><p id="3d034c0b-29c9-8051-be75-c927d6a1d4ab" class="" dir="auto">In this setup, <code>InventoryService</code> is shared safely across the application since it doesn&#x27;t hold user-specific data. Conversely, <code>ShoppingCart</code> maintains user-specific state, meaning a prototype scope ensures different threads or user sessions receive independent carts rather than conflicting over the same instance.</p><h3 id="3d034c0b-29c9-80a5-baad-c6255497c933" class="" dir="auto"><strong>Bean Naming (The Silent Bug Maker)</strong></h3><p id="3d034c0b-29c9-80c9-945c-f81896456bbb" class="" dir="auto">If you don&#x27;t specify a name, Spring Boot uses <strong>camelCase</strong> of the class name.</p><ul id="3d034c0b-29c9-802d-b406-deddeb8f8e93" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>TaxCalculator</code> class → Bean name is <code>taxCalculator</code></li></ul><ul id="3d034c0b-29c9-807f-abe2-e021c778de26" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>RestTemplate</code> class → Bean name is <code>restTemplate</code></li></ul><h3 id="3d034c0b-29c9-8093-96d4-cf3d09597a24" class="" dir="auto"><mark class="highlight-orange" data-notion-highlight="orange"><strong>How does Spring inject dependencies? Does it check the type or the name? </strong></mark></h3><h3 id="3d034c0b-29c9-80b3-b8d5-fb3678a0b25b" class="" dir="auto">Resolution Order</h3><p id="3d034c0b-29c9-8057-bbf9-fe3dc6e4e49a" class="" dir="auto">When Spring encounters an injection point (like <code>@Autowired</code>), it resolves candidates through a fixed sequence:</p><ol type="1" id="3d034c0b-29c9-8047-ac92-e39541428cfb" class="numbered-list" start="1" dir="auto"><li><strong>Match by Type:</strong> Spring scans the <code>ApplicationContext</code> for all beans assignable to the target dependency&#x27;s type (including interfaces and parent classes).<ul id="3d034c0b-29c9-80be-8e91-cbcc9e4eddef" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Exactly 1 match:</strong> It injects that bean directly.</li></ul><ul id="3d034c0b-29c9-80d5-828f-f094331c1282" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>0 matches:</strong> It throws <code>NoSuchBeanDefinitionException</code>.</li></ul><ul id="3d034c0b-29c9-8072-b544-eaaa4e0c2354" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>2 or more matches:</strong> It moves to ambiguity resolution.</li></ul></li></ol><ol type="1" id="3d034c0b-29c9-80e8-ada5-c0d459120212" class="numbered-list" start="2" dir="auto"><li><strong>Check for </strong><code><strong>@Primary</strong></code><strong>:</strong> If multiple beans match the type, Spring checks whether exactly one of them is annotated with <code>@Primary</code>. If so, that bean wins.</li></ol><ol type="1" id="3d034c0b-29c9-80cd-9367-cda39d487232" class="numbered-list" start="3" dir="auto"><li><strong>Check for </strong><code><strong>@Qualifier</strong></code><strong>:</strong> If specified at the injection point (e.g., <code>@Qualifier(&quot;creditCardService&quot;)</code>), Spring matches against the qualifier value declared on the candidate bean.</li></ol><ol type="1" id="3d034c0b-29c9-8071-bd53-dbae2cb4b325" class="numbered-list" start="4" dir="auto"><li><strong>Fallback: Match by Name:</strong> If multiple candidate beans match the type and no <code>@Primary</code> or <code>@Qualifier</code> settles it, Spring compares the <strong>field or parameter name</strong> to the candidate <strong>bean names (IDs)</strong>.<ul id="3d034c0b-29c9-80d9-b6b4-dadae410e87d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">If one candidate&#x27;s bean ID matches the variable name, it injects it.</li></ul><ul id="3d034c0b-29c9-80ae-9697-ddfd1b853086" class="bulleted-list" dir="auto"><li style="list-style-type:disc">If none or multiple match, it throws <code>NoUniqueBeanDefinitionException</code>.</li></ul></li></ol><pre id="3d034c0b-29c9-80c0-ab45-d5d93d44959a" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">public interface PaymentGateway {}
+
+@Component(&quot;stripe&quot;)
+public class StripeGateway implements PaymentGateway {}
+
+@Component(&quot;paypal&quot;)
+public class PayPalGateway implements PaymentGateway {}
+
+@Service
+public class CheckoutService {
+
+    // 1. Spring looks for beans of type PaymentGateway -&gt; finds [stripe, paypal]
+    // 2. Ambiguity exists -&gt; checks variable name: &quot;paypal&quot;
+    // 3. Injects PayPalGateway
+    @Autowired
+    private PaymentGateway paypal; 
+}</code></pre><p id="3d034c0b-29c9-8035-8122-ce33c001d527" class="" dir="auto">
+</p><p id="3d034c0b-29c9-809e-8b93-d5f7aff73d12" class="" dir="auto">
+</p><div id="3d034c0b-29c9-801e-b1dc-e58f4714554c" class="collection-content" dir="ltr"><h4 class="collection-title">Beans #Questions</h4><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:100%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://app.notion.com/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th></tr></thead><tbody><tr id="3d034c0b-29c9-800b-bcdb-fd1b04cc0475"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20a%20Spring%20Bean%203d034c0b29c9800bbcdbfd1b04cc0475.html" data-notion-page-id="3d034c0b-29c9-800b-bcdb-fd1b04cc0475" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is a Spring Bean?</a></td></tr><tr id="3d034c0b-29c9-80e2-a150-d3fdb2dacbeb"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20difference%20between%20@Component%20and%20@Bea%203d034c0b29c980e2a150d3fdb2dacbeb.html" data-notion-page-id="3d034c0b-29c9-80e2-a150-d3fdb2dacbeb" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the difference between @Component and @Bean?</a></td></tr><tr id="3d034c0b-29c9-807b-8293-cf719cfa8869"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20default%20scope%20of%20a%20Spring%20Bean%203d034c0b29c9807b8293cf719cfa8869.html" data-notion-page-id="3d034c0b-29c9-807b-8293-cf719cfa8869" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the default scope of a Spring Bean?</a></td></tr><tr id="3d034c0b-29c9-8065-8ae0-d8227355c2b0"><td class="cell-title"><a href="Beans/Beans%20#Questions/Name%20all%20the%20Bean%20scopes%20in%20Spring%20Boot%20When%20would%203d034c0b29c980658ae0d8227355c2b0.html" data-notion-page-id="3d034c0b-29c9-8065-8ae0-d8227355c2b0" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Name all the Bean scopes in Spring Boot. When would you use Prototype?</a></td></tr><tr id="3d034c0b-29c9-80f3-9e2f-fb41d3e65ab8"><td class="cell-title"><a href="Beans/Beans%20#Questions/Explain%20the%20Spring%20Bean%20Lifecycle%203d034c0b29c980f39e2ffb41d3e65ab8.html" data-notion-page-id="3d034c0b-29c9-80f3-9e2f-fb41d3e65ab8" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Explain the Spring Bean Lifecycle.</a></td></tr><tr id="3d034c0b-29c9-805c-9032-f81225af21b1"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20difference%20between%20@Configuration%20and%20%203d034c0b29c9805c9032f81225af21b1.html" data-notion-page-id="3d034c0b-29c9-805c-9032-f81225af21b1" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the difference between @Configuration and @Component when defining @Bean methods?</a></td></tr><tr id="3d034c0b-29c9-809e-8776-c1ebb265dc10"><td class="cell-title"><a href="Beans/Beans%20#Questions/How%20do%20you%20conditionally%20create%20a%20Bean%20(Boot%20speci%203d034c0b29c9809e8776c1ebb265dc10.html" data-notion-page-id="3d034c0b-29c9-809e-8776-c1ebb265dc10" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How do you conditionally create a Bean? (Boot specific)</a></td></tr><tr id="3d034c0b-29c9-80d5-add6-ecdee272f79b"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20@Primary%20and%20when%20do%20you%20use%20it%203d034c0b29c980d5add6ecdee272f79b.html" data-notion-page-id="3d034c0b-29c9-80d5-add6-ecdee272f79b" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is @Primary and when do you use it?</a></td></tr><tr id="3d034c0b-29c9-8073-b438-ffed1ba219e6"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20difference%20between%20BeanFactory%20and%20App%203d034c0b29c98073b438ffed1ba219e6.html" data-notion-page-id="3d034c0b-29c9-8073-b438-ffed1ba219e6" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88"> What is the difference between BeanFactory and ApplicationContext?</a></td></tr><tr id="3d034c0b-29c9-8043-827b-cf6ffdbbc6a9"><td class="cell-title"><a href="Beans/Beans%20#Questions/How%20does%20Spring%20inject%20dependencies%20Does%20it%20check%20%203d034c0b29c98043827bcf6ffdbbc6a9.html" data-notion-page-id="3d034c0b-29c9-8043-827b-cf6ffdbbc6a9" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How does Spring inject dependencies? Does it check the type or the name? </a></td></tr><tr id="3d034c0b-29c9-80ff-a50c-dde6985db4f4"><td class="cell-title"><a href="Beans/Beans%20#Questions/When%20multiple%20beans%20of%20same%20type%20existing%20in%20Sprin%203d034c0b29c980ffa50cdde6985db4f4.html" data-notion-page-id="3d034c0b-29c9-80ff-a50c-dde6985db4f4" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">When multiple beans of same type existing in Spring container, how Spring decide which one to inject?</a></td></tr></tbody></table></div><br/><br/></div></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-3">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">3. Components</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Components 3d034c0b29c9805080b6d382eaac7c91.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Components</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="3d034c0b-29c9-80c4-a0dc-c9dc915523be" class="" dir="auto">In plain English: <strong>A Component is any Java class that you mark with a special hat (annotation) to tell Spring: </strong><em><strong>&quot;Hey, please create an instance of this class, keep it in your warehouse, and manage its entire lifecycle for me.&quot;</strong></em></p><p id="3d034c0b-29c9-8078-9ff6-de2c04487264" class="" dir="auto">But here is the secret most tutorials don&#x27;t tell you: <strong>You will almost NEVER use the plain </strong><code><strong>@Component</strong></code><strong> annotation in a real project.</strong> Instead, you use its specialized &quot;children&quot; because they make your code 10x more readable.</p><hr id="3d034c0b-29c9-801f-83d3-e6d103532c7d" dir="auto"/><h3 id="3d034c0b-29c9-8054-afa9-f34eb5b98003" class="" dir="auto"><strong>The Component Family Tree (The Hierarchy)</strong></h3><p id="3d034c0b-29c9-800d-9165-d39983be0c60" class="" dir="auto">Spring Boot has 4 main stereotype annotations. They are all <strong>exactly the same</strong> under the hood (they all create Beans), but they serve different <em>human</em> purposes:</p><table id="3d034c0b-29c9-8010-bcaa-f04e7ffb931e" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3d034c0b-29c9-80c6-8f98-c45d5cd1ec9f" dir="ltr"><th id="s:RZ" class="simple-table-header-color simple-table-header"><strong>Annotation</strong></th><th id="XIsz" class="simple-table-header-color simple-table-header"><strong>What it means</strong></th><th id="BX[L" class="simple-table-header-color simple-table-header"><strong>When to use</strong></th></tr></thead><tbody><tr id="3d034c0b-29c9-80db-a2b6-da1610347eae" dir="ltr"><td id="s:RZ" class=""><code><strong>@Component</strong></code></td><td id="XIsz" class="">The generic parent.</td><td id="BX[L" class="">Use for pure utility classes that don&#x27;t fit anywhere else (e.g., a <code>PasswordEncoder</code>, a <code>DateFormatter</code>).</td></tr><tr id="3d034c0b-29c9-8038-95a7-ede70ce93ede" dir="ltr"><td id="s:RZ" class=""><code><strong>@Service</strong></code></td><td id="XIsz" class="">Holds <strong>Business Logic</strong>.</td><td id="BX[L" class="">Use for all your service layer classes that perform calculations, validations, and orchestrate repositories.</td></tr><tr id="3d034c0b-29c9-807c-abd8-c30ca3701942" dir="ltr"><td id="s:RZ" class=""><code><strong>@Repository</strong></code></td><td id="XIsz" class="">Talks to the <strong>Database</strong>.</td><td id="BX[L" class="">Use for Data Access Objects (DAOs). <strong>Special perk:</strong> Automatically catches database-specific SQL exceptions and converts them into Spring&#x27;s unified <code>DataAccessException</code>.</td></tr><tr id="3d034c0b-29c9-8086-98a7-dfd74104b614" dir="ltr"><td id="s:RZ" class=""><code><strong>@Controller</strong></code> / <code><strong>@RestController</strong></code></td><td id="XIsz" class="">Handles <strong>Web Requests</strong>.</td><td id="BX[L" class="">Use for REST API endpoints that map HTTP requests to Java methods.</td></tr></tbody></table><hr id="3d034c0b-29c9-80ad-a429-c7438558c709" dir="auto"/><h3 id="3d034c0b-29c9-80ca-84f3-c899e3add6b7" class="" dir="auto"><strong>Practical Example: The Four Components Working Together</strong></h3><p id="3d034c0b-29c9-80c5-be63-c4532c7d26ce" class="" dir="auto">Let&#x27;s build a tiny E-commerce feature to <strong>place an order</strong>. You will see all 4 stereotypes in action simultaneously.</p><p id="3d034c0b-29c9-80b2-9a69-fce1fd1516fc" class="" dir="auto">java</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d034c0b-29c9-8064-8202-cba7dd24dcff" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">// 1. @Repository - Talks to the database
+@Repository
+public class OrderRepository {
+    public void saveToDb(String orderId) {
+        System.out.println(&quot;Saving order &quot; + orderId + &quot; to the database...&quot;);
+        // If a SQLException happens here, Spring wraps it into DataAccessException automatically.
+    }
+}
+
+// 2. @Component - A generic utility (doesn&#x27;t fit Service/Repository)
+@Component
+public class OrderNumberGenerator {
+    public String generate() {
+        return &quot;ORD-&quot; + System.currentTimeMillis();
+    }
+}
+
+// 3. @Service - The core Business Logic
+@Service
+public class OrderService {
+
+    private final OrderRepository orderRepository;      // Injected
+    private final OrderNumberGenerator numberGenerator; // Injected
+
+    // Constructor Injection (The Gold Standard)
+    public OrderService(OrderRepository orderRepository, OrderNumberGenerator numberGenerator) {
+        this.orderRepository = orderRepository;
+        this.numberGenerator = numberGenerator;
+    }
+
+    public void placeOrder() {
+        String orderId = numberGenerator.generate(); // Use utility component
+        orderRepository.saveToDb(orderId);           // Use DB component
+        System.out.println(&quot;Order placed successfully!&quot;);
+    }
+}
+
+// 4. @RestController - Handles HTTP Requests (Web Layer)
+@RestController
+@RequestMapping(&quot;/orders&quot;)
+public class OrderController {
+
+    private final OrderService orderService; // Injected
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @PostMapping(&quot;/place&quot;)
+    public String placeOrder() {
+        orderService.placeOrder();
+        return &quot;Order placed!&quot;;
+    }
+}</code></pre><p id="3d034c0b-29c9-800c-9a76-eb01eccaaa2a" class="" dir="auto"><strong>Notice the flow</strong>: When a user hits <code>POST /orders/place</code>, Spring calls the Controller, which calls the Service, which calls the Repository and the Utility Component. <strong>All 4 classes are components, and Spring injected them automatically.</strong></p><p id="3d034c0b-29c9-8030-b05f-f176c91ab7bd" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-80db-9c14-f0f402bc71f5" class="" dir="auto"><strong>Advanced: Customizing Component Names</strong></h3><p id="3d034c0b-29c9-8098-9904-de337db2cf19" class="" dir="auto">By default, Spring uses <strong>camelCase</strong> of the class name as the Bean ID:</p><ul id="3d034c0b-29c9-802d-82c6-da980721d086" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>OrderNumberGenerator</code> → Bean name is <code>orderNumberGenerator</code>.</li></ul><ul id="3d034c0b-29c9-80d0-bbc5-cfc5caa6fede" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>OrderService</code> → Bean name is <code>orderService</code>.</li></ul><p id="3d034c0b-29c9-80f3-856a-f3fe847115ed" class="" dir="auto">You can change the name manually using the annotation parameter:</p><p id="3d034c0b-29c9-8034-834e-c118affcfe76" class="" dir="auto">java</p><pre id="3d034c0b-29c9-800a-b828-e42ef6795cbd" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Component(&quot;utilities&quot;) // Now you must use @Qualifier(&quot;utilities&quot;) to inject it.
+public class OrderNumberGenerator { ... }</code></pre><p id="3d034c0b-29c9-8050-aa1f-e27bc8461e2e" class="" dir="auto">
+</p></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-4">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">4. Configurations</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Configurations 3d134c0b29c9801c8ea5d7b135ca4891.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Configurations</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="3d134c0b-29c9-808f-b96d-f79cd7c1a041" class="" dir="auto">To understand <strong>Spring Boot Configuration</strong>, think of it as <strong>the &quot;control panel&quot; of your application</strong>.</p><p id="3d134c0b-29c9-809a-b2f2-eb552f29e200" class="" dir="auto">It is everything that determines <strong>HOW</strong> your app runs, without changing your Java source code. Do you need to run on port <code>8081</code> instead of <code>8080</code>? Change the database URL? Turn on debug logs? That is all Configuration.</p><p id="3d134c0b-29c9-803c-bc7a-e8aafb599906" class="" dir="auto">In Spring Boot, configuration is split into <strong>two completely different worlds</strong>. Mixing them up is the #1 mistake junior developers make:</p><ol type="1" id="3d134c0b-29c9-804d-940a-ef4bf8ff7b12" class="numbered-list" start="1" dir="auto"><li><strong>Externalized Configuration</strong> (Data/Values): Database URLs, API keys, server ports. Lives in <code>application.properties</code> / <code>application.yml</code>.</li></ol><ol type="1" id="3d134c0b-29c9-8061-9cc9-fcca75e31fad" class="numbered-list" start="2" dir="auto"><li><strong>Java Configuration</strong> (Beans/Setup): Creating and wiring up Beans (like <code>RestTemplate</code>, <code>SecurityFilterChain</code>). Lives in classes annotated with <code>@Configuration</code>.</li></ol><p id="3d134c0b-29c9-809b-8905-d721e557a7b8" class="" dir="auto">Here is exactly how both work, with rock-solid examples.</p><hr id="3d134c0b-29c9-8057-968a-dadb9acec13f" dir="auto"/><h3 id="3d134c0b-29c9-80ce-aa01-c8c695be3ce2" class="" dir="auto"><strong>Part 1: Externalized Configuration (The </strong><code><strong>application.yml</strong></code><strong> file)</strong></h3><p id="3d134c0b-29c9-8010-9826-e68145d12844" class="" dir="auto">This is where you store values that change per environment (Dev, QA, Prod). Spring Boot reads this file automatically on startup.</p><p id="3d134c0b-29c9-80e0-91f4-e52510c24432" class="" dir="auto"><strong>Example using </strong><code><strong>application.yml</strong></code><strong> (modern) vs </strong><code><strong>application.properties</strong></code><strong> (older):</strong></p><p id="3d134c0b-29c9-800e-891d-ed57af9e21b9" class="" dir="auto"><em>Old way (properties - flat &amp; repetitive):</em></p><p id="3d134c0b-29c9-807d-8da3-d0e336b96363" class="" dir="auto">properties</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d134c0b-29c9-80b1-8280-e1cd11a76010" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">server.port=8081
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.username=root
+spring.datasource.password=secret123</code></pre><p id="3d134c0b-29c9-8004-b1ee-dd5bc95c7c26" class="" dir="auto"><em>New way (YAML - hierarchical &amp; human-readable):</em></p><p id="3d134c0b-29c9-807c-b175-f5ed7f9f18f8" class="" dir="auto">yaml</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js" integrity="sha512-6O/PZimM3TD1NN3yrazePA4AbZrPcwt1QCGJrVY7WoHDJROZFc9TlBvIKMe+QfqgcslW4lQeBzNJEJvIMC8WhA==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d134c0b-29c9-8075-87ac-e7c470c7d13f" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: secret123
+
+# Custom application-specific settings
+app:
+  name: E-Commerce API
+  max-retry-attempts: 3
+  email:
+    host: smtp.gmail.com
+    port: 587</code></pre><hr id="3d134c0b-29c9-8051-aff0-d4dec454ad24" dir="auto"/><h3 id="3d134c0b-29c9-80c6-bd26-d42153c2fd97" class="" dir="auto"><strong>Part 2: Reading Configuration in Your Java Code</strong></h3><p id="3d134c0b-29c9-80d7-adba-cc1315732afb" class="" dir="auto">You never hardcode <code>&quot;localhost&quot;</code> or <code>&quot;8081&quot;</code> in your classes. You read them from the YAML file using two methods:</p><h4 id="3d134c0b-29c9-808e-bff6-e357365117f9" class="" dir="auto"><strong>Method A: </strong><code><strong>@Value</strong></code><strong> (Use for 1–2 simple values)</strong></h4><p id="3d134c0b-29c9-80a5-ac6b-e67614ec4040" class="" dir="auto">java</p><pre id="3d134c0b-29c9-802f-a518-cdaa858947a7" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+public class EmailService {
+
+    @Value(&quot;${app.email.host}&quot;)   // Reads &quot;smtp.gmail.com&quot;
+    private String emailHost;
+
+    @Value(&quot;${app.email.port}&quot;)   // Reads &quot;587&quot;
+    private int emailPort;
+
+    @Value(&quot;${app.max-retry-attempts:5}&quot;) // Reads 3, but defaults to 5 if missing!
+    private int maxRetries;
+
+    public void send() {
+        System.out.println(&quot;Connecting to &quot; + emailHost + &quot;:&quot; + emailPort);
+    }
+}</code></pre><p id="3d134c0b-29c9-80dc-a801-e792426ce98e" class="" dir="auto"><strong>Downside</strong>: If you have 20 related properties, your class gets cluttered with 20 <code>@Value</code> annotations.</p><h4 id="3d134c0b-29c9-80f5-8681-f7aa5f096a6b" class="" dir="auto"><strong>Method B: </strong><code><strong>@ConfigurationProperties</strong></code><strong> (The PRO Way - USE THIS!)</strong></h4><p id="3d134c0b-29c9-8086-94ea-fc203904d0e1" class="" dir="auto">This binds a whole group of properties into a single, type-safe Java POJO. This is the <strong>gold standard</strong> in professional Spring Boot.</p><p id="3d134c0b-29c9-808d-ae69-cf11f1ab518e" class="" dir="auto"><strong>Step 1: The properties file (</strong><code><strong>application.yml</strong></code><strong>)</strong></p><p id="3d134c0b-29c9-809f-8be6-df4dba580d3d" class="" dir="auto">yaml</p><pre id="3d134c0b-29c9-8043-871a-fbecc0f098cf" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">aws:
+  access-key: AKIAIOSFODNN7EXAMPLE
+  secret-key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+  region: us-east-1
+  s3:
+    bucket: my-app-bucket
+    timeout: 3000</code></pre><p id="3d134c0b-29c9-80b3-bd63-f9ddd3881c7b" class="" dir="auto"><strong>Step 2: The Java POJO to hold them</strong></p><p id="3d134c0b-29c9-80a5-920f-e42289f618a2" class="" dir="auto">java</p><pre id="3d134c0b-29c9-80b1-ab7f-e204dbf9796f" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = &quot;aws&quot;) // Tells Spring to map everything under &quot;aws&quot;
+public class AwsProperties {
+    private String accessKey;
+    private String secretKey;
+    private String region;
+    private S3 s3 = new S3(); // Nested object
+
+    // Getters and Setters are MANDATORY for Spring to bind values!
+    public String getAccessKey() { return accessKey; }
+    public void setAccessKey(String accessKey) { this.accessKey = accessKey; }
+    public String getSecretKey() { return secretKey; }
+    public void setSecretKey(String secretKey) { this.secretKey = secretKey; }
+    public String getRegion() { return region; }
+    public void setRegion(String region) { this.region = region; }
+    public S3 getS3() { return s3; }
+    public void setS3(S3 s3) { this.s3 = s3; }
+
+    public static class S3 {
+        private String bucket;
+        private int timeout;
+        // Getters and setters for these...
+    }
+}</code></pre><p id="3d134c0b-29c9-8077-8a07-fa838d81bed2" class="" dir="auto"><strong>Step 3: Using it in your Service</strong></p><p id="3d134c0b-29c9-80cc-8b5e-d54513d2c0cb" class="" dir="auto">java</p><pre id="3d134c0b-29c9-8031-811a-f94c45bd169e" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+public class AwsUploader {
+    private final AwsProperties awsProperties;
+
+    public AwsUploader(AwsProperties awsProperties) {
+        this.awsProperties = awsProperties;
+    }
+
+    public void upload() {
+        // Clean, type-safe access!
+        String key = awsProperties.getAccessKey();
+        String bucket = awsProperties.getS3().getBucket();
+        System.out.println(&quot;Uploading to bucket: &quot; + bucket);
+    }
+}</code></pre><p id="3d134c0b-29c9-80dc-bfa0-c4a1cfdf9af1" class="" dir="auto"><strong>Why is this amazing?</strong> If you misspell <code>acess-key</code> in your YAML, Spring throws a clear startup error, rather than failing silently at runtime.</p><hr id="3d134c0b-29c9-8077-8514-e877da800fa8" dir="auto"/><h3 id="3d134c0b-29c9-8030-9592-d6954015553a" class="" dir="auto"><strong>Part 3: Java Configuration (</strong><code><strong>@Configuration</strong></code><strong> classes)</strong></h3><p id="3d134c0b-29c9-80bd-a306-ec09bd4ab8c4" class="" dir="auto">This is <strong>NOT</strong> for data values (ports, URLs). This is for defining <strong>Beans</strong> (objects) that your app needs.</p><p id="3d134c0b-29c9-80e1-a929-dcdf2e2dac00" class="" dir="auto">Remember the <code>@Component</code> lesson? You can&#x27;t put <code>@Component</code> on third-party classes like <code>RestTemplate</code>. So you use <code>@Configuration</code> to explicitly create them.</p><p id="3d134c0b-29c9-80c2-901a-dde34aea43c1" class="" dir="auto">java</p><pre id="3d134c0b-29c9-80b6-bf92-f43199412f5c" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+@Configuration // Tells Spring: &quot;This class contains Bean definitions&quot;
+public class AppConfig {
+
+    // Creates a Bean and registers it in the Spring Container
+    @Bean
+    public RestTemplate restTemplate() {
+        System.out.println(&quot;RestTemplate Bean created via @Configuration!&quot;);
+        return new RestTemplate();
+    }
+
+    // You can even use configuration VALUES inside @Bean creation!
+    @Bean
+    public DataSource dataSource() {
+        // Imagine we injected the AwsProperties here...
+        return DataSourceBuilder.create()
+                .url(&quot;jdbc:mysql://localhost:3306/mydb&quot;) // Usually read from @Value
+                .build();
+    }
+}</code></pre><h3 id="3d134c0b-29c9-80ab-b06f-c4ac474f730c" class="" dir="auto"><strong>Part 4: Profiles (Dev vs Prod)</strong></h3><p id="3d134c0b-29c9-8001-a085-f84c277c06fd" class="" dir="auto">You don&#x27;t want to manually comment/uncomment URLs when deploying. Spring Boot has <strong>Profiles</strong>.</p><p id="3d134c0b-29c9-80d7-9861-e871dfa709d7" class="" dir="auto"><strong>File 1: </strong><code><strong>application-dev.yml</strong></code> (Runs on my laptop)</p><p id="3d134c0b-29c9-8094-be43-e72d223e099d" class="" dir="auto">yaml</p><pre id="3d134c0b-29c9-8089-a505-d467be852313" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb</code></pre><p id="3d134c0b-29c9-80f4-b542-f3615baa1da0" class="" dir="auto"><strong>File 2: </strong><code><strong>application-prod.yml</strong></code> (Runs in the cloud)</p><p id="3d134c0b-29c9-8018-8549-d41311c6c28c" class="" dir="auto">yaml</p><pre id="3d134c0b-29c9-8024-85c3-e98043b564fb" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">server:
+  port: 443
+spring:
+  datasource:
+    url: jdbc:mysql://production-db.amazonaws.com:3306/mydb</code></pre><p id="3d134c0b-29c9-80d0-af4e-df54d5f89367" class="" dir="auto"><strong>How to activate them:</strong></p><ul id="3d134c0b-29c9-8087-a3c7-cf3f4ff5db66" class="bulleted-list" dir="auto"><li style="list-style-type:disc">In IntelliJ VM options: <code>Dspring.profiles.active=dev</code></li></ul><ul id="3d134c0b-29c9-8084-8305-fc5346e1a146" class="bulleted-list" dir="auto"><li style="list-style-type:disc">In your <code>application.yml</code> base file: <code>spring.profiles.active: prod</code></li></ul><ul id="3d134c0b-29c9-80c2-b464-f7c25330f33a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Command line: <code>java -jar myapp.jar --spring.profiles.active=prod</code></li></ul><p id="3d134c0b-29c9-80b9-a6e3-f880ce9681f8" class="" dir="auto">
+</p><h3 id="3d134c0b-29c9-808c-95d3-f79b531323d5" class="" dir="auto"><strong>Part 5: The Magic Override Hierarchy (Crucial for DevOps)</strong></h3><p id="3d134c0b-29c9-8080-a3f2-f05bdbd97296" class="" dir="auto">Here is the <strong>secret superpower</strong> of Spring Boot: You can override any <code>application.yml</code> value <strong>without rebuilding the JAR</strong>.</p><p id="3d134c0b-29c9-803e-8734-de9d327d34ae" class="" dir="auto">Spring Boot reads configuration in this exact order (higher overrides lower):</p><ol type="1" id="3d134c0b-29c9-80fc-bb32-d5c98bffb7af" class="numbered-list" start="1" dir="auto"><li><strong>Command Line Arguments</strong> (Highest priority): <code>java -jar app.jar --server.port=9090</code></li></ol><ol type="1" id="3d134c0b-29c9-807d-8ff9-e17432f34a25" class="numbered-list" start="2" dir="auto"><li><strong>Environment Variables</strong> (used in Kubernetes/Docker): <code>export SERVER_PORT=9090</code></li></ol><ol type="1" id="3d134c0b-29c9-8063-9580-d7129340aed1" class="numbered-list" start="3" dir="auto"><li><code><strong>application-{profile}.yml</strong></code> (e.g., <code>application-prod.yml</code>)</li></ol><ol type="1" id="3d134c0b-29c9-8026-81ac-e867d11a1538" class="numbered-list" start="4" dir="auto"><li><code><strong>application.yml</strong></code> (Lowest priority - the default)</li></ol><p id="3d134c0b-29c9-80cc-b48e-f72374b3c5a4" class="" dir="auto"><strong>Practical DevOps example:</strong> You NEVER hardcode production passwords in <code>application.yml</code>. You set them as Environment Variables in your cloud server:</p><p id="3d134c0b-29c9-807a-9027-fd87e121714e" class="" dir="auto">bash</p><pre id="3d134c0b-29c9-806c-aaa2-cf502a5c1e4f" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">export SPRING_DATASOURCE_PASSWORD=SuperSecret2024! # Boot automatically maps this to spring.datasource.password
+java -jar myapp.jar</code></pre><h3 id="3d634c0b-29c9-8002-8e6c-c7289eb1916b" class="" dir="auto"><strong>The &quot;Gotcha&quot; You Must Remember</strong></h3><p id="3d634c0b-29c9-8073-8c18-f768bb271574" class="" dir="auto"><code><strong>@Configuration</strong></code><strong> vs </strong><code><strong>@Component</strong></code> - We touched on this in Beans, but it&#x27;s critical here:</p><ul id="3d634c0b-29c9-80d5-9c11-c1fa184b075c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">If you put <code>@Bean</code> methods inside a <code><strong>@Configuration</strong></code> class, Spring wraps the class with a CGLIB proxy. Calling <code>restTemplate()</code> inside another <code>@Bean</code> method returns the <strong>same Singleton instance</strong>.</li></ul><ul id="3d634c0b-29c9-80de-94f3-c6a2a089b729" class="bulleted-list" dir="auto"><li style="list-style-type:disc">If you put <code>@Bean</code> methods inside a <code><strong>@Component</strong></code> class, Spring <strong>does NOT</strong> proxy it. Calling the method returns a <strong>new instance</strong> every time, breaking Singleton behavior.</li></ul><p id="3d634c0b-29c9-80e5-89e8-e2cd20f6b3aa" class="" dir="auto">java</p><pre id="3d634c0b-29c9-8010-87d8-e5d8ab883e44" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">@Configuration // CORRECT - Singleton guaranteed
+public class CorrectConfig {
+    @Bean public A a() { return new A(); }
+    @Bean public B b() { return new B(a()); } // Gets cached A
+}
+
+@Component // WRONG for cross-bean references
+public class WrongConfig {
+    @Bean public A a() { return new A(); }
+    @Bean public B b() { return new B(a()); } // Creates a SECOND A instance! Bug!
+}</code></pre></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-5">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">5. Dependency injection</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Dependency injection 3d034c0b29c980229349fd27320bdf46.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Dependency injection</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="3d034c0b-29c9-808f-acc2-f7a960fe35ad" class="" dir="auto"><mark class="highlight-orange" data-notion-highlight="orange"><strong>Dependency Injection (DI)</strong></mark> is a design pattern implementing Inversion of Control (IoC), where the Spring container automatically creates and manages object dependencies, injecting them at runtime rather than having classes instantiate them directly.</p><ul id="3d034c0b-29c9-8050-835d-c020c45220e3" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>The Concept:</strong> Instead of a class using the <code>new</code> keyword to create its collaborators, Spring&#x27;s IoC container wires them together based on configurations or annotations.</li></ul><ul id="3d034c0b-29c9-8079-b252-e417af7fda2d" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>The Benefit:</strong> It promotes loose coupling, making code highly modular, maintainable, and easy to unit test by swapping real dependencies with mocks.</li></ul><h3 id="3d034c0b-29c9-8032-bbab-ff579a5408b9" class="" dir="auto"><strong>The &quot;Warehouse&quot; (IoC Container)</strong></h3><p id="3d034c0b-29c9-8056-80a5-ffcb6699909a" class="" dir="auto">When your Spring Boot app starts, it scans all your classes. Any class annotated with <code>@Component</code>, <code>@Service</code>, <code>@Repository</code>, or <code>@Controller</code> is instantiated and placed into Spring&#x27;s <strong>IoC Container</strong> (think of it as a giant global HashMap of ready-to-use objects).</p><p id="3d034c0b-29c9-8041-bd95-ca54fc65c41b" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-80d8-be3f-c69751cda1ad" class="" dir="auto">Primary Injection Types:</h3><p id="3d034c0b-29c9-8097-bb90-dde563207c19" class="" dir="auto"><strong>Constructor Injection</strong><br/>Dependencies are passed through the class constructor. Spring automatically resolves the parameters when instantiating the bean. Since Spring 4.3, the <code>@Autowired</code> annotation is optional if the class has only a single constructor. This approach is strongly recommended because it guarantees that dependencies are not null and allows fields to be marked as <code>final</code>, ensuring immutability and making unit testing straightforward without needing a Spring container.</p><p id="3d034c0b-29c9-805c-a56a-c3e71f1cf03a" class="" dir="auto">Java</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d034c0b-29c9-8010-8bf2-f0fe8606f124" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+public class UserService{
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
+    public User getUser(Long id){
+        return userRepository.findById(id);
+    }
+}</code></pre><p id="3d034c0b-29c9-8043-bc1d-f1a2d8d1b94c" class="" dir="auto"><strong>Setter Injection</strong><br/>Dependencies are assigned via public setter methods after the bean is created using a default no-arg constructor. This method is ideal for optional dependencies or circular dependencies where components need to be modified or injected after initial bean construction. It requires placing the <code>@Autowired</code> annotation explicitly on the setter method.</p><p id="3d034c0b-29c9-800c-a6c2-fc9eaf7be939" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8088-8154-cc38d4055a66" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+public class UserService{
+    private UserRepository userRepository;
+
+    @Autowired
+    public void setUserRepository(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
+    public User getUser(Long id){
+        return userRepository.findById(id);
+    }
+}</code></pre><p id="3d034c0b-29c9-802e-8382-c057e7285a88" class="" dir="auto"><strong>Field Injection</strong><br/>Dependencies are injected directly into class variables using reflection, completely bypassing constructors and setters. While it reduces boilerplate code, it is widely discouraged in production codebases. Field injection hides tight coupling, makes classes difficult to instantiate manually in unit tests (requiring reflection or mocking frameworks to set private fields), and prevents fields from being declared <code>final</code>. It requires the <code>@Autowired</code> annotation directly above the field.</p><p id="3d034c0b-29c9-803d-8403-f1cfa62bb337" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8050-8f36-e04ff2f002d7" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+public class UserService{
+    @Autowired
+    private UserRepository userRepository;
+
+    public User getUser(Long id){
+        return userRepository.findById(id);
+    }
+}</code></pre><p id="3d034c0b-29c9-802c-9d60-cf4d4c8d30b3" class="" dir="auto">Prioritizing constructor injection for all mandatory components ensures a clean, predictable component lifecycle and robust, testable code.</p><p id="3d034c0b-29c9-804b-89ef-eaf4591cdfe0" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-80ab-a1fd-c2db41007c29" class="" dir="auto"><strong>The &quot;Magic&quot; (How Spring finds them)</strong></h3><p id="3d034c0b-29c9-80f1-a1aa-cb07a56ef866" class="" dir="auto">Notice in the Constructor example I <strong>did not</strong> write <code>@Autowired</code> on the constructor. Why?</p><p id="3d034c0b-29c9-80e8-9acc-ec7414e5406a" class="" dir="auto">Because if a class has <mark class="highlight-blue" data-notion-highlight="blue"><strong>only one constructor</strong></mark>, Spring Boot automatically uses it to inject dependencies. If you have multiple constructors, you must put <code>@Autowired</code> on the one you want Spring to use.</p><p id="3d034c0b-29c9-80e4-8edb-de4a291ef398" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8035-9683-e260b53f6822" class="" dir="auto"><strong>The Golden Rule for DI in Spring Boot:</strong></h3><blockquote id="3d034c0b-29c9-80d6-8302-fa47aa8e605b" class="" dir="auto"><strong>Never use </strong><code><strong>new</strong></code><strong> to create a Service, Repository, or Controller. Always let Spring inject them via the constructor. If you need to create an object manually (like a simple DTO or a </strong><code><strong>LocalDate</strong></code><strong>), that&#x27;s fine—those aren&#x27;t &quot;dependencies&quot; and don&#x27;t go in the container.</strong></blockquote><p id="3d034c0b-29c9-80b3-878a-e2dbfe0f3edb" class="" dir="auto">
+</p><div id="3d034c0b-29c9-80b0-8623-f1e46e208d13" class="collection-content" dir="ltr"><h4 class="collection-title">#Questions</h4><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:100%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://app.notion.com/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th></tr></thead><tbody><tr id="3d034c0b-29c9-808d-bb19-cb9e9d36a8a3"><td class="cell-title"><a href="Dependency%20injection/#Questions/What%20is%20Inversion%20of%20control%20(IOC)%203d034c0b29c9808dbb19cb9e9d36a8a3.html" data-notion-page-id="3d034c0b-29c9-808d-bb19-cb9e9d36a8a3" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is Inversion of control (IOC)</a></td></tr><tr id="3d034c0b-29c9-805c-af0b-fbaf214ee0c7"><td class="cell-title"><a href="Dependency%20injection/#Questions/What%20is%20the%20difference%20between%20Inversion%20of%20Contro%203d034c0b29c9805caf0bfbaf214ee0c7.html" data-notion-page-id="3d034c0b-29c9-805c-af0b-fbaf214ee0c7" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the difference between Inversion of Control (IoC) and Dependency Injection (DI)?</a></td></tr><tr id="3d034c0b-29c9-80e9-a5e7-c8baee775763"><td class="cell-title"><a href="Dependency%20injection/#Questions/Which%20type%20of%20injection%20does%20Spring%20Boot%20recommend%203d034c0b29c980e9a5e7c8baee775763.html" data-notion-page-id="3d034c0b-29c9-80e9-a5e7-c8baee775763" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Which type of injection does Spring Boot recommend, and why?</a></td></tr><tr id="3d034c0b-29c9-8012-9cd6-c5ab4033e337"><td class="cell-title"><a href="Dependency%20injection/#Questions/How%20does%20Spring%20Boot%20actually%20perform%20this%20injecti%203d034c0b29c980129cd6c5ab4033e337.html" data-notion-page-id="3d034c0b-29c9-8012-9cd6-c5ab4033e337" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How does Spring Boot actually perform this injection?</a></td></tr><tr id="3d034c0b-29c9-80fa-91c0-caaf5878b20a"><td class="cell-title"><a href="Dependency%20injection/#Questions/What%20happens%20if%20Spring%20finds%202%20beans%20of%20the%20same%20t%203d034c0b29c980fa91c0caaf5878b20a.html" data-notion-page-id="3d034c0b-29c9-80fa-91c0-caaf5878b20a" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What happens if Spring finds 2 beans of the same type, and how do you fix it?
+• </a></td></tr><tr id="3d034c0b-29c9-80c9-b25f-cdfdf54de2c1"><td class="cell-title"><a href="Dependency%20injection/#Questions/Can%20you%20use%20@Autowired%20on%20a%20private%20field%20How%203d034c0b29c980c9b25fcdfdf54de2c1.html" data-notion-page-id="3d034c0b-29c9-80c9-b25f-cdfdf54de2c1" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Can you use @Autowired on a private field? How?</a></td></tr><tr id="3d034c0b-29c9-806a-a707-d048f00e20ce"><td class="cell-title"><a href="Dependency%20injection/#Questions/What%20is%20a%20Circular%20Dependency,%20and%20how%20does%20Spring%203d034c0b29c9806aa707d048f00e20ce.html" data-notion-page-id="3d034c0b-29c9-806a-a707-d048f00e20ce" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is a Circular Dependency, and how does Spring Boot handle it?</a></td></tr><tr id="3d034c0b-29c9-8013-9e6b-fd67bd841aa1"><td class="cell-title"><a href="Dependency%20injection/#Questions/If%20@Autowired%20is%20optional%20on%20a%20constructor,%20why%20do%203d034c0b29c980139e6bfd67bd841aa1.html" data-notion-page-id="3d034c0b-29c9-8013-9e6b-fd67bd841aa1" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">If @Autowired is optional on a constructor, why does it still exist?</a></td></tr><tr id="3d034c0b-29c9-80d8-b3a9-c7d2b17059b4"><td class="cell-title"><a href="Dependency%20injection/#Questions/If%20there%20are%20two%20constructors%20in%20a%20class,%20how%20does%203d034c0b29c980d8b3a9c7d2b17059b4.html" data-notion-page-id="3d034c0b-29c9-80d8-b3a9-c7d2b17059b4" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">If there are two constructors in a class, how does Spring resolve constructor injection?</a></td></tr><tr id="3d034c0b-29c9-805d-bf6b-ff9963445666"><td class="cell-title"><a href="Dependency%20injection/#Questions/How%20does%20Lombok%20help%20in%20removing%20boilerplate%20code%20%203d034c0b29c9805dbf6bff9963445666.html" data-notion-page-id="3d034c0b-29c9-805d-bf6b-ff9963445666" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How does Lombok help in removing boilerplate code in constructor injection?</a></td></tr><tr id="3d034c0b-29c9-803e-b2c3-cd2536cc922b"><td class="cell-title"><a href="Dependency%20injection/#Questions/What%20is%20the%20risk%20in%20constructor%20injection%20of%20mixin%203d034c0b29c9803eb2c3cd2536cc922b.html" data-notion-page-id="3d034c0b-29c9-803e-b2c3-cd2536cc922b" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the risk in constructor injection of mixing Lombok annotations or writing a manual constructor alongside a Lombok annotation?</a></td></tr><tr id="3d034c0b-29c9-8055-be37-c7057970b87f"><td class="cell-title"><a href="Dependency%20injection/#Questions/What%20is%20a%20Bean%20What%20is%20a%20prototype%20scoped%20Bean%20and%203d034c0b29c98055be37c7057970b87f.html" data-notion-page-id="3d034c0b-29c9-8055-be37-c7057970b87f" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is a Bean? What is a prototype scoped Bean and singleton scoped Bean? </a></td></tr><tr id="3d034c0b-29c9-80b4-8859-d32cc3c58366"><td class="cell-title"><a href="Dependency%20injection/#Questions/How%20do%20you%20handle%20dependency%20injection%20in%20unit%20tes%203d034c0b29c980b48859d32cc3c58366.html" data-notion-page-id="3d034c0b-29c9-80b4-8859-d32cc3c58366" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How do you handle dependency injection in unit tests without starting the whole Spring Boot application?</a></td></tr><tr id="3d034c0b-29c9-80c3-b857-fd9b8ee8b887"><td class="cell-title"><a href="Dependency%20injection/#Questions/Can%20you%20inject%20interfaces%20Or%20must%20you%20inject%20concr%203d034c0b29c980c3b857fd9b8ee8b887.html" data-notion-page-id="3d034c0b-29c9-80c3-b857-fd9b8ee8b887" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Can you inject interfaces? Or must you inject concrete classes?</a></td></tr></tbody></table></div><br/><br/></div><p id="3d034c0b-29c9-80b1-b673-c8f14e86c28a" class="" dir="auto">
+</p></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-6">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">6. Profiles</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Profiles 3d634c0b29c980a28967df67396f965a.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Profiles</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h3 id="3d634c0b-29c9-8062-9d36-c23b905df4c0" class="" dir="auto"><strong>Part 1: The Core Mechanism (Naming Convention)</strong></h3><p id="3d634c0b-29c9-8061-9c07-c66864c4ffe8" class="" dir="auto">Spring Boot uses a simple file-naming rule. Instead of having just one <code>application.yml</code>, you create multiple:</p><table id="3d634c0b-29c9-80eb-98da-fbb51198b1c1" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3d634c0b-29c9-80ee-b997-cb45317fe915" dir="ltr"><th id="OQ;e" class="simple-table-header-color simple-table-header"><strong>File Name</strong></th><th id="iuh`" class="simple-table-header-color simple-table-header" style="width:474px"><strong>Purpose</strong></th></tr></thead><tbody><tr id="3d634c0b-29c9-8010-bce5-c08994afe901" dir="ltr"><td id="OQ;e" class=""><code>application.yml</code></td><td id="iuh`" class="" style="width:474px">The <strong>default/base</strong> file (shared by all profiles).</td></tr><tr id="3d634c0b-29c9-8017-972d-c351a11f6ced" dir="ltr"><td id="OQ;e" class=""><code>application-dev.yml</code></td><td id="iuh`" class="" style="width:474px">Overrides specifically for <strong>Development</strong> (local laptop).</td></tr><tr id="3d634c0b-29c9-8044-a935-e027ebdbfb51" dir="ltr"><td id="OQ;e" class=""><code>application-test.yml</code></td><td id="iuh`" class="" style="width:474px">Overrides specifically for <strong>Testing</strong> (QA server).</td></tr><tr id="3d634c0b-29c9-8079-ada9-e2806cc717dd" dir="ltr"><td id="OQ;e" class=""><code>application-prod.yml</code></td><td id="iuh`" class="" style="width:474px">Overrides specifically for <strong>Production</strong> (Live users).</td></tr></tbody></table><p id="3d634c0b-29c9-80ef-a626-d9be53b54775" class="" dir="auto">Both <code>application.yml</code> (YAML) and <code>application.properties</code> serve the same fundamental purpose in Spring Boot: defining externalized configuration settings. However, they differ in syntax, readability, features, and how Spring Boot parses them.</p><p id="3d634c0b-29c9-8032-bb7d-ec8c1d8e0f91" class="" dir="auto"><strong>1. Syntax Comparison</strong></p><p id="3d634c0b-29c9-8088-a60f-cf45270d289a" class="" dir="auto">YAML uses indentation (spaces, not tabs) to represent hierarchical data, while <code>.properties</code> uses flat <code>key=value</code> pairs.</p><p id="3d634c0b-29c9-8024-91ee-d651a4518b84" class="" dir="auto"><strong>Properties (</strong><code><strong>application.properties</strong></code><strong>)</strong></p><p id="3d634c0b-29c9-8053-a3c0-eb612e8bfba3" class="" dir="auto">Properties</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" integrity="sha512-m3JYEI6gx5fh9jF10FjGoMzVKcV2N6nchcDcqPCdI1L3R2WQV7br2XVNR8iTLb2daOMRl3zldbcfT40xU2ntVw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d634c0b-29c9-80fd-ae19-f64d0ec9a892" class="code code-wrap" data-notion-code-syntax="jsx"><code class="language-jsx" style="white-space:pre-wrap;word-break:break-all">server.port=8080
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.username=root
+spring.datasource.password=secret
+
+# List values
+app.allowed-origins[0]=https://example.com
+app.allowed-origins[1]=https://api.example.com</code></pre><p id="3d634c0b-29c9-80ce-943e-f0f016ce347d" class="" dir="auto"><strong>YAML (</strong><code><strong>application.yml</strong></code><strong>)</strong></p><p id="3d634c0b-29c9-8000-8c2f-fcb1e0886c98" class="" dir="auto">YAML</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js" integrity="sha512-6O/PZimM3TD1NN3yrazePA4AbZrPcwt1QCGJrVY7WoHDJROZFc9TlBvIKMe+QfqgcslW4lQeBzNJEJvIMC8WhA==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d634c0b-29c9-80a0-a95a-c94ec34b49d1" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: secret
+
+# List values
+app:
+  allowed-origins:
+    - https://example.com
+    - https://api.example.com</code></pre><p id="3d634c0b-29c9-8040-8d15-d7d371066369" class="" dir="auto"><strong><br/>Example Of different profiles : The Base File (</strong><code><strong>application.yml</strong></code><strong>)</strong></p><p id="3d634c0b-29c9-800d-95e0-f5ee0b6ce8d8" class="" dir="auto">yaml</p><pre id="3d634c0b-29c9-805b-a03c-df4eb87de5b0" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all"># These apply to EVERY profile, unless overridden
+server:
+  port: 8080
+
+app:
+  name: MyEcommerceApp
+  cache:
+    enabled: true</code></pre><p id="3d634c0b-29c9-8048-a409-d2bbf1de1584" class="" dir="auto"><strong>Example: The Dev File (</strong><code><strong>application-dev.yml</strong></code><strong>)</strong></p><p id="3d634c0b-29c9-807b-9f91-f4cc9764b9b6" class="" dir="auto">yaml</p><pre id="3d634c0b-29c9-8089-8f5b-f4662c7117a2" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all"># Runs on my laptop - uses an in-memory database
+server:
+  port: 9090  # Overrides the base port 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:devdb
+    username: sa
+    password:
+  jpa:
+    show-sql: true  # I want to see every SQL query for debugging
+
+logging:
+  level:
+    com.myapp: DEBUG  # Super verbose logs</code></pre><p id="3d634c0b-29c9-801b-9f6d-d059f7a2c193" class="" dir="auto"><strong>Example: The Prod File (</strong><code><strong>application-prod.yml</strong></code><strong>)</strong></p><p id="3d634c0b-29c9-8026-be9f-ff589cc7f837" class="" dir="auto">yaml</p><pre id="3d634c0b-29c9-808c-a2f5-ce60d7746cc0" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all"># Runs on the cloud server
+spring:
+  datasource:
+    url: jdbc:mysql://prod-db.amazonaws.com:3306/mydb
+    username: ${DB_USER}  # Reads from secret environment variables
+    password: ${DB_PASS}
+  jpa:
+    show-sql: false  # Hide SQL in production to reduce log noise
+
+logging:
+  level:
+    com.myapp: WARN  # Only log warnings and errors
+
+server:
+  compression:
+    enabled: true  # Enable GZIP compression for faster load times</code></pre><h3 id="3d634c0b-29c9-80fa-af64-f2445ce9ad21" class="" dir="auto"><strong>Part 2: How to Activate a Profile (The 3 Ways)</strong></h3><p id="3d634c0b-29c9-80b3-a5e3-e5d4ab301ccc" class="" dir="auto">Spring Boot needs to know <em>which</em> file to load. You tell it by setting <code>spring.profiles.active</code>.</p><p id="3d634c0b-29c9-809a-a73e-fb831b58a96a" class="" dir="auto"><strong>Method 1: Command Line (Best for DevOps/Docker)</strong></p><p id="3d634c0b-29c9-8025-a15d-ecade6fc58b8" class="" dir="auto">bash</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" integrity="sha512-whYhDwtTmlC/NpZlCr6PSsAaLOrfjVg/iXAnC4H/dtiHawpShhT2SlIMbpIhT/IL/NrpdMm+Hq2C13+VKpHTYw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d634c0b-29c9-8074-904e-dcd12d26247d" class="code code-wrap" data-notion-code-syntax="bash"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">java -jar myapp.jar --spring.profiles.active=prod</code></pre><p id="3d634c0b-29c9-806e-b111-cf0d1fe86f00" class="" dir="auto"><strong>Method 2: Environment Variable (Best for Kubernetes/Cloud)</strong></p><p id="3d634c0b-29c9-8004-9aa1-e4a1595569f4" class="" dir="auto">bash</p><pre id="3d634c0b-29c9-80f7-a470-d082aa5e40eb" class="code code-wrap" data-notion-code-syntax="bash"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">export SPRING_PROFILES_ACTIVE=prod
+java -jar myapp.jar</code></pre><p id="3d634c0b-29c9-8009-9335-f90c0fe6c30c" class="" dir="auto"><strong>Method 3: Hardcode in </strong><code><strong>application.yml</strong></code><strong> (Only for local testing)</strong></p><p id="3d634c0b-29c9-80b3-abba-c5e174351b63" class="" dir="auto">yaml</p><pre id="3d634c0b-29c9-80e4-98e8-e8995a1aef49" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">spring:
+  profiles:
+    active: dev  # My laptop always uses dev</code></pre><hr id="3d634c0b-29c9-80dc-aa8f-da06702c70ff" dir="auto"/><h3 id="3d634c0b-29c9-802c-adec-ee8848cf387b" class="" dir="auto"><strong>Part 3: Profile-Specific Beans (</strong><code><strong>@Profile</strong></code><strong> annotation)</strong></h3><p id="3d634c0b-29c9-80cd-a148-f6c827ee69cf" class="" dir="auto">Sometimes, you don&#x27;t just change a URL—you need to inject <em>completely different Java objects</em> depending on the environment.</p><p id="3d634c0b-29c9-806a-adec-e1a7e00de369" class="" dir="auto"><strong>Example:</strong> In Dev, you want to use a fake &quot;Stub&quot; email sender (so you don&#x27;t accidentally spam real customers). In Prod, you use the real AWS SES sender.</p><p id="3d634c0b-29c9-8083-95d8-dcb4d89c1797" class="" dir="auto">java</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d634c0b-29c9-80c9-a1c9-df2efbcb9af9" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">// 1. The Interface
+public interface EmailSender {
+    void send(String message);
+}
+
+// 2. The DEV Implementation (Fake)
+@Component
+@Profile(&quot;dev&quot;) // Spring ONLY creates this bean if &quot;dev&quot; is active!
+public class DevEmailSender implements EmailSender {
+    @Override
+    public void send(String message) {
+        System.out.println(&quot;[DEV STUB] Would send email: &quot; + message);
+        // No actual network calls. Safe for testing.
+    }
+}
+
+// 3. The PROD Implementation (Real)
+@Component
+@Profile(&quot;prod&quot;) // Spring ONLY creates this bean if &quot;prod&quot; is active!
+public class ProdEmailSender implements EmailSender {
+    @Override
+    public void send(String message) {
+        // Actual AWS SDK code to send a real email.
+        System.out.println(&quot;SENDING REAL EMAIL TO CUSTOMER: &quot; + message);
+    }
+}
+
+// 4. The Service (Doesn&#x27;t care which one it gets)
+@Service
+public class NotificationService {
+    private final EmailSender emailSender;
+
+    public NotificationService(EmailSender emailSender) {
+        this.emailSender = emailSender; // Gets Dev bean in dev, Prod bean in prod.
+    }
+}</code></pre><hr id="3d634c0b-29c9-80db-9b2f-c7f9e3c387f9" dir="auto"/><h3 id="3d634c0b-29c9-80de-a592-cbb3a1e6c68c" class="" dir="auto"><strong>Part 4: Spring Boot 2.4+ &quot;Profile Groups&quot; (The Pro Feature)</strong></h3><p id="3d634c0b-29c9-807a-aaef-cbb58616a708" class="" dir="auto">In large projects, &quot;prod&quot; might mean 10 different microservices. Instead of writing <code>@Profile(&quot;prod&quot;)</code> on 50 beans, you group them.</p><p id="3d634c0b-29c9-804b-868b-de91dc6db3e3" class="" dir="auto">yaml</p><pre id="3d634c0b-29c9-8029-9a25-e9a41df94af0" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all"># Inside application.yml
+spring:
+  profiles:
+    groups:
+      # If I activate &quot;cloud&quot;, it automatically activates &quot;prod&quot; AND &quot;aws&quot; AND &quot;monitoring&quot;
+      cloud: prod, aws, monitoring
+      local: dev, h2, debug
+
+# Now when you run: java -jar app.jar --spring.profiles.active=cloud
+# Spring Boot automatically loads: application-prod.yml, application-aws.yml, AND application-monitoring.yml</code></pre><p id="3d634c0b-29c9-8023-ba53-d707e6a19647" class="" dir="auto"><strong>Why this is awesome:</strong> You can mix-and-match features. You can reuse <code>aws.yml</code> for both Prod and Staging without duplicating code.</p><hr id="3d634c0b-29c9-80a8-84ea-fac87741ace9" dir="auto"/><h3 id="3d634c0b-29c9-80c9-a50c-c83b558bc1ec" class="" dir="auto"><strong>Part 5: The &quot;Default&quot; Profile</strong></h3><p id="3d634c0b-29c9-8050-b74f-c35ddf2f8aad" class="" dir="auto">What if you don&#x27;t set <code>spring.profiles.active</code>? Spring Boot uses a <strong>default</strong> profile called <code>default</code>.</p><ul id="3d634c0b-29c9-80c7-bd9e-c07563c3e992" class="bulleted-list" dir="auto"><li style="list-style-type:disc">You can define fallback properties inside <code>application.yml</code> specifically for this:</li></ul><p id="3d634c0b-29c9-80c5-ae93-e4b407524c0f" class="" dir="auto">yaml</p><pre id="3d634c0b-29c9-8075-9b13-dec913b2de9d" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all"># This only runs if NO profile is active (i.e., default)
+spring:
+  config:
+    activate:
+      on-profile: default
+server:
+  port: 8080</code></pre><p id="3d634c0b-29c9-80f0-9e06-d3d239ff323f" class="" dir="auto"><em>(Practical tip: In real projects, you always set a profile. The &quot;default&quot; profile is usually just a safety net to prevent startup failures.)</em></p><hr id="3d634c0b-29c9-80e8-8e8a-d1ea4f790a71" dir="auto"/><h3 id="3d634c0b-29c9-8018-84df-c1a6294ecdf8" class="" dir="auto"><strong>Part 6: Testing with Profiles</strong></h3><p id="3d634c0b-29c9-80c6-865e-cd0f823a36d2" class="" dir="auto">In your integration tests, you don&#x27;t want to accidentally connect to the real production database. You specify a test profile.</p><p id="3d634c0b-29c9-809a-990a-fffbba1f01c1" class="" dir="auto">java</p><pre id="3d634c0b-29c9-80a4-8c6f-fb38fa358b85" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@SpringBootTest
+@ActiveProfiles(&quot;test&quot;) // Tells Spring: &quot;Load application-test.yml for this test&quot;
+public class UserServiceTest {
+
+    @Test
+    void testSomething() {
+        // This uses the H2 database, not MySQL.
+    }
+}</code></pre><p id="3d634c0b-29c9-809f-ac0e-c08a30145ce5" class="" dir="auto"><br/><br/></p><h3 id="3d634c0b-29c9-80ee-b380-fa103b9611b8" class="" dir="auto"><strong>Configuration Precedence Order :</strong></h3><p id="3d634c0b-29c9-802d-8c0c-ffa549537485" class="" dir="auto">When properties with the same key exist across default and profile-specific files, lower precedence properties are overwritten by higher precedence ones:</p><ul id="3d634c0b-29c9-8069-a811-fa3c1d8806dd" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Lowest:</strong> Base <code>application.properties</code> / <code>application.yml</code> (Default settings loaded for all profiles).</li></ul><ul id="3d634c0b-29c9-80af-b0ee-ea6665eb9822" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Higher:</strong> Profile-specific files (<code>application-{profile}.properties</code> / <code>.yml</code>).</li></ul><ul id="3d634c0b-29c9-80c9-8d9c-fd68eaeab1e0" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Highest:</strong> Command-line arguments, environment variables, or System properties set at launch.</li></ul><p id="3d634c0b-29c9-8048-b651-db2d60f7e958" class="" dir="auto">If multiple profiles are active (e.g., <code>--spring.profiles.active=dev,h2</code>), the profile listed <strong>last</strong> wins in case of key collisions.</p><p id="3d634c0b-29c9-803b-b59f-cfac8ea9f155" class="" dir="auto"><strong>2. Multi-Profile Layering Example</strong></p><p id="3d634c0b-29c9-802b-9768-ecf4124c668d" class="" dir="auto">Properties are layered dynamically at runtime rather than inherited:</p><p id="3d634c0b-29c9-8096-a563-e0e9190c27b6" class="" dir="auto"><code>application.yml</code> <em>(Default base config)</em></p><p id="3d634c0b-29c9-8044-9828-ec4c5071cd36" class="" dir="auto">YAML</p><pre id="3d634c0b-29c9-80ce-b5da-ddf2a0db6c33" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">app:
+  name: &quot;My App&quot;
+  max-connections: 10
+  feature-flag: false</code></pre><p id="3d634c0b-29c9-8042-9d43-c1c558c19524" class="" dir="auto"><code>application-dev.yml</code> <em>(Activated via </em><em><code>dev</code></em><em> profile)</em></p><p id="3d634c0b-29c9-805e-9f3c-d5e0b2f3a7a3" class="" dir="auto">YAML</p><pre id="3d634c0b-29c9-806b-a1e5-f1cf7945493b" class="code code-wrap" data-notion-code-syntax="yaml"><code class="language-yaml" style="white-space:pre-wrap;word-break:break-all">app:
+  max-connections: 50
+  feature-flag: true</code></pre><ul id="3d634c0b-29c9-8041-803f-eb6f7b612da5" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Active profile:</strong> <code>dev</code></li></ul><ul id="3d634c0b-29c9-80e0-bd6f-dc6a68e0f461" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Resolved </strong><code><strong>app.name</strong></code><strong>:</strong> <code>&quot;My App&quot;</code> (inherited from default because <code>dev</code> doesn&#x27;t redefine it)</li></ul><ul id="3d634c0b-29c9-8051-8a97-c4a9ec12c22a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Resolved </strong><code><strong>app.max-connections</strong></code><strong>:</strong> <code>50</code> (profile property overrides base property)</li></ul><ul id="3d634c0b-29c9-80bf-9984-eafd439f478e" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Resolved </strong><code><strong>app.feature-flag</strong></code><strong>:</strong> <code>true</code> (profile property overrides base property)</li></ul><p id="3d634c0b-29c9-8044-85df-da50cd7b9c63" class="" dir="auto">
+</p></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-7">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">7. Project structure</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Project structure 3d034c0b29c980998ab2d8a665efaba6.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Project structure</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d034c0b-29c9-80ba-8238-d6d2da0d8c23" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">my-spring-boot-app/
+├── pom.xml (or build.gradle)
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/myapp/
+│   │   │       ├── MySpringBootApplication.java   (THE ENTRY POINT)
+│   │   │       ├── controller/
+│   │   │       │   └── UserController.java
+│   │   │       ├── service/
+│   │   │       │   └── UserService.java
+│   │   │       ├── repository/
+│   │   │       │   └── UserRepository.java
+│   │   │       ├── model/
+│   │   │       │   └── User.java
+│   │   │       └── config/
+│   │   │           └── AppConfig.java             (Custom @Configuration)
+│   │   │
+│   │   └── resources/
+│   │       ├── application.yml (or application.properties)  (THE BRAIN)
+│   │       ├── static/          (CSS, JS, Images)
+│   │       ├── templates/       (Thymeleaf, Freemarker .html files)
+│   │       └── db/              (Optional: migration scripts like Flyway/Liquibase)
+│   │
+│   └── test/
+│       └── java/
+│           └── com/example/myapp/
+│               └── MySpringBootApplicationTests.java  (Integration test)
+│
+└── target/                       (Built .jar/.war - generated, don&#x27;t edit)
+</code></pre><h3 id="3d034c0b-29c9-80e3-82f1-d70570cecef7" class="" dir="auto"><strong>Breaking Down Each Component (Practical Usage)</strong></h3><h4 id="3d034c0b-29c9-8053-b5c1-d99f1581bfaa" class="" dir="auto"><mark class="highlight-pink" data-notion-highlight="pink"><strong>1. The &quot;Root&quot; Package (</strong></mark><mark class="highlight-pink" data-notion-highlight="pink"><code><strong>com.example.myapp</strong></code></mark><mark class="highlight-pink" data-notion-highlight="pink"><strong>)</strong></mark></h4><ul id="3d034c0b-29c9-80c5-b3f5-fcc643286fa1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Practical rule</strong>: Everything <em>must</em> be inside or below this package.</li></ul><ul id="3d034c0b-29c9-80b4-8f34-c608270c1193" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Why?</strong> Spring Boot&#x27;s <code>@ComponentScan</code> starts scanning from this package by default. If you put a <code>Service</code> outside this folder, Spring won&#x27;t find it, and you&#x27;ll get cryptic <code>NoSuchBeanDefinitionException</code> errors.</li></ul><p id="3d034c0b-29c9-80db-a41a-d5f210eee71c" class="" dir="auto">
+</p><h4 id="3d034c0b-29c9-805f-9ef4-e310e22af1ee" class="" dir="auto"><mark class="highlight-pink" data-notion-highlight="pink"><strong>2. The Main Class (</strong></mark><mark class="highlight-pink" data-notion-highlight="pink"><code><strong>MySpringBootApplication.java</strong></code></mark><mark class="highlight-pink" data-notion-highlight="pink"><strong>)</strong></mark></h4><p id="3d034c0b-29c9-8055-9703-ece7886d78e4" class="" dir="auto">java</p><pre id="3d034c0b-29c9-8070-9ad5-f3a8ae4b9c04" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@SpringBootApplication  // This is a triple-annotation: @Configuration + @EnableAutoConfiguration + @ComponentScan
+public class MySpringBootApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(MySpringBootApplication.class, args);
+    }
+}</code></pre><ul id="3d034c0b-29c9-809b-b886-da898a33edde" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Practical placement</strong>: This file <strong>must</strong> be at the root of your package structure (directly under <code>com.example.myapp</code>).</li></ul><ul id="3d034c0b-29c9-80a8-8192-e3ef3c60554a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Why?</strong> Because <code>@SpringBootApplication</code> scans all sub-packages (<code>controller</code>, <code>service</code>, <code>repository</code>) recursively. If you move this into a sub-folder, none of your beans get loaded.</li></ul><p id="3d034c0b-29c9-8098-9cca-fcc8346cda3c" class="" dir="auto">
+</p><h4 id="3d034c0b-29c9-80d1-9eb1-ec9ff16679b1" class="" dir="auto"><mark class="highlight-pink" data-notion-highlight="pink"><strong>3. The &quot;Layered&quot; Sub-Packages (Controller, Service, Repository)</strong></mark></h4><p id="3d034c0b-29c9-8002-93b2-d663f1f96f4d" class="" dir="auto">This is the classic <strong>3-tier architecture</strong>:</p><table id="3d034c0b-29c9-801d-8f6b-f03726112440" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3d034c0b-29c9-80d4-909d-feceefc2a067" dir="ltr"><th id="&lt;idI" class="simple-table-header-color simple-table-header"><strong>Folder</strong></th><th id="Et}H" class="simple-table-header-color simple-table-header"><strong>Purpose</strong></th><th id="~mtv" class="simple-table-header-color simple-table-header"><strong>Key Annotation</strong></th></tr></thead><tbody><tr id="3d034c0b-29c9-80f2-82c5-d9033c8855eb" dir="ltr"><td id="&lt;idI" class=""><code>controller/</code></td><td id="Et}H" class="">Handles HTTP requests/responses (REST endpoints).</td><td id="~mtv" class=""><code>@RestController</code>, <code>@RequestMapping</code></td></tr><tr id="3d034c0b-29c9-804b-b175-f47ead594a32" dir="ltr"><td id="&lt;idI" class=""><code>service/</code></td><td id="Et}H" class="">Houses <strong>business logic</strong> (calculations, validations, orchestration).</td><td id="~mtv" class=""><code>@Service</code></td></tr><tr id="3d034c0b-29c9-809d-8c2e-fa127ed8e5e8" dir="ltr"><td id="&lt;idI" class=""><code>repository/</code></td><td id="Et}H" class="">Talks to the database (CRUD operations).</td><td id="~mtv" class=""><code>@Repository</code> or <code>public interface JpaRepository</code></td></tr><tr id="3d034c0b-29c9-80a9-adf8-dc644f9159f3" dir="ltr"><td id="&lt;idI" class=""><code>model/</code></td><td id="Et}H" class="">Plain POJOs (Entities, DTOs).</td><td id="~mtv" class=""><code>@Entity</code> (JPA) or just plain Java classes.</td></tr><tr id="3d034c0b-29c9-80e9-9b11-ff39dd0c29a9" dir="ltr"><td id="&lt;idI" class=""><code>config/</code></td><td id="Et}H" class="">Custom beans that override Boot&#x27;s defaults (e.g., custom <code>SecurityFilterChain</code>, <code>RestTemplate</code>).</td><td id="~mtv" class=""><code>@Configuration</code></td></tr></tbody></table><p id="3d034c0b-29c9-8084-8b29-f5a527129d15" class="" dir="auto"><strong>Practical rule</strong>: Never put business logic in the Controller. Keep Controller thin (just parse input, call Service, return JSON). This makes unit testing easy.</p><p id="3d034c0b-29c9-80a5-a846-e1d012445521" class="" dir="auto">
+</p><h4 id="3d034c0b-29c9-8087-a2ae-f56725433c70" class="" dir="auto"><mark class="highlight-pink" data-notion-highlight="pink"><strong>4. The </strong></mark><mark class="highlight-pink" data-notion-highlight="pink"><code><strong>resources/</strong></code></mark><mark class="highlight-pink" data-notion-highlight="pink"><strong> Folder (The Brain)</strong></mark></h4><p id="3d034c0b-29c9-80bf-b1b1-ca205053c3dd" class="" dir="auto">This is where your external configuration lives. It is <strong>not</strong> Java code; it is runtime data.</p><ul id="3d034c0b-29c9-80aa-be2b-dfbbc95618de" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>application.yml</strong></code><strong> (or </strong><code><strong>.properties</strong></code><strong>)</strong>: This is <strong>the single source of truth</strong> for environment-specific settings.<ul id="3d034c0b-29c9-8046-abb8-c3392187a67c" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Example: <code>server.port: 8081</code>, <code>spring.datasource.url: jdbc:mysql://localhost:3306/mydb</code>.</li></ul><ul id="3d034c0b-29c9-80ec-899f-f5255fdadbe9" class="bulleted-list" dir="auto"><li style="list-style-type:circle"><strong>Practical trick</strong>: You can have <code>application-dev.yml</code>, <code>application-prod.yml</code> and activate them using <code>spring.profiles.active=dev</code>.</li></ul></li></ul><ul id="3d034c0b-29c9-8018-b7a8-cfed2f6c7df7" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>static/</strong></code>: Put your frontend static assets here (CSS, JavaScript, images). They are served automatically at <code>http://localhost:8080/css/style.css</code>.</li></ul><ul id="3d034c0b-29c9-8037-8761-f24c8c2a4958" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>templates/</strong></code>: Put your server-side rendering HTML here (Thymeleaf or JSP). Boot auto-configures the ViewResolver to look here.</li></ul><ul id="3d034c0b-29c9-80a4-8b34-e14ff50c1138" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>db/migration/</strong></code>: If you use Flyway, put your SQL migration scripts here (e.g., <code>V1__create_users_table.sql</code>). Boot runs them automatically on startup.</li></ul><p id="3d034c0b-29c9-8085-bd98-efb74c1e63bd" class="" dir="auto">
+</p><h4 id="3d034c0b-29c9-8045-a8ef-dcea44fc40fb" class="" dir="auto"><mark class="highlight-pink" data-notion-highlight="pink"><strong>5. The </strong></mark><mark class="highlight-pink" data-notion-highlight="pink"><code><strong>test/</strong></code></mark><mark class="highlight-pink" data-notion-highlight="pink"><strong> Folder (Parallel Structure)</strong></mark></h4><ul id="3d034c0b-29c9-801a-a9ba-e07400e1d1a5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">It mirrors the <code>main/java</code> structure exactly.</li></ul><ul id="3d034c0b-29c9-8016-b0cd-f4c13ca0fddb" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Crucial file</strong>: <code>MySpringBootApplicationTests.java</code> – this is the &quot;sanity check&quot; test. It loads the entire Spring context to ensure your database connections and beans all wire up correctly.</li></ul><ul id="3d034c0b-29c9-8043-a95f-f797979e6e1f" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Practical use</strong>: Always run this test before pushing to Git. If this test fails, your application won&#x27;t even start in production.</li></ul></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-8">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">8. Spring vs Spring Boot</h2>
+            <a href="../Spring boot/Quick Concepts/Untitled/Spring vs Spring Boot 3d034c0b29c9806e8673ecd19fcb8fc5.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Spring vs Spring Boot</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="3d034c0b-29c9-8095-aff9-dc97a4250fa0" class="" dir="auto"><strong>The 30-Second Elevator Pitch<br/><br/></strong><em>&quot;Spring is a comprehensive Java framework designed to build enterprise applications through features like Dependency Injection (DI) and Inversion of Control (IoC). However, standard Spring requires extensive manual configuration.</em>  <br/><em>Spring Boot is an extension built </em><em><strong>on top of</strong></em><em> the Spring Framework that eliminates boilerplate configuration. It provides auto-configuration, starter dependencies, and embedded servers to let developers create production-ready microservices and web applications out of the box.&quot;</em>  </p><p id="3d034c0b-29c9-80a1-b521-d63086ff017f" class="" dir="auto">
+</p><table id="3d034c0b-29c9-8030-807f-e92db7845cd5" class="simple-table" dir="ltr"><tbody><tr id="3d034c0b-29c9-80b1-a6fa-e09db8afb336" dir="ltr"><td id="n`aG" class=""><strong>Feature</strong></td><td id="LhRN" class=""><strong>Spring Framework</strong></td><td id="]OyW" class=""><strong>Spring Boot</strong></td></tr><tr id="3d034c0b-29c9-80aa-958f-fd194271df38" dir="ltr"><td id="n`aG" class=""><strong>Core Focus</strong></td><td id="LhRN" class="">Broad foundation for Java enterprise apps (DI, IoC, AOP).</td><td id="]OyW" class="">Rapid application development and microservices.</td></tr><tr id="3d034c0b-29c9-8078-8ecf-d52c3b498d64" dir="ltr"><td id="n`aG" class=""><strong>Configuration</strong></td><td id="LhRN" class="">Heavy manual configuration (XML or <code>@Configuration</code> classes).</td><td id="]OyW" class=""><strong>Auto-Configuration</strong> via <code>@EnableAutoConfiguration</code> based on classpath libraries.</td></tr><tr id="3d034c0b-29c9-8077-bb5c-e47cb2dc8973" dir="ltr"><td id="n`aG" class=""><strong>Server Deployment</strong></td><td id="LhRN" class="">Requires external deployment (WAR file onto standalone Tomcat/WildFly).</td><td id="]OyW" class=""><strong>Embedded Servers</strong> (Tomcat, Jetty) — packages as a standalone runnable JAR.</td></tr><tr id="3d034c0b-29c9-8053-b2e0-cf61dfe52dcb" dir="ltr"><td id="n`aG" class=""><strong>Dependencies</strong></td><td id="LhRN" class="">Individual library dependencies with manual version matching.</td><td id="]OyW" class=""><strong>Starter POMs</strong> (<code>spring-boot-starter-web</code>) managing compatible dependency versions.</td></tr><tr id="3d034c0b-29c9-8061-a542-e455da77e387" dir="ltr"><td id="n`aG" class=""><strong>Production Features</strong></td><td id="LhRN" class="">Requires manual setup for health monitoring and metrics.</td><td id="]OyW" class="">Built-in <strong>Actuator</strong> module providing endpoints (<code>/actuator/health</code>, <code>/metrics</code>).</td></tr></tbody></table><div id="3d034c0b-29c9-8018-9c1e-ca7ab0f4273b" class="collection-content" dir="ltr"><h4 class="collection-title">#Questions</h4><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:100%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://app.notion.com/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th></tr></thead><tbody><tr id="3d034c0b-29c9-8035-a1c9-f6f95014a46a"><td class="cell-title"><a href="Spring%20vs%20Spring%20Boot/#Questions/How%20Auto-Configuration%20Works%20@EnableAutoConfigurat%203d034c0b29c98035a1c9f6f95014a46a.html" data-notion-page-id="3d034c0b-29c9-8035-a1c9-f6f95014a46a" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How Auto-Configuration Works ?  @EnableAutoConfiguration ?</a></td></tr><tr id="3d034c0b-29c9-802d-9e40-dc0e31323a68"><td class="cell-title"><a href="Spring%20vs%20Spring%20Boot/#Questions/What%20are%20the%20three%20individual%20annotations%20that%20@Sp%203d034c0b29c9802d9e40dc0e31323a68.html" data-notion-page-id="3d034c0b-29c9-802d-9e40-dc0e31323a68" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What are the three individual annotations that @SpringBootApplication encapsulates under the hood?</a></td></tr></tbody></table></div><br/><br/></div><p id="3d034c0b-29c9-8032-9fcb-fd1c7cd063ce" class="" dir="auto">
+</p></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-9">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">9. Quick Concepts</h2>
+            <a href="../Spring boot/Quick Concepts 3d034c0b29c980b68f93fdeaccbaad4e.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><h1 class="page-title" dir="auto">Quick Concepts</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="3d034c0b-29c9-80b9-958b-e0649bcedcfb" class="" dir="auto"><mark class="highlight-yellow" data-notion-highlight="yellow">Roadmap: <br/></mark><a href="https://chatgpt.com/share/6a97d80b-d0a4-83ee-ad74-42201bf98967">https://chatgpt.com/share/6a97d80b-d0a4-83ee-ad74-42201bf98967</a><mark class="highlight-yellow" data-notion-highlight="yellow"><br/><br/>Spring Boot fundamentals</mark></p><div id="3d034c0b-29c9-802b-a042-ddf0289efc96" class="collection-content" dir="ltr"><h4 class="collection-title"></h4><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:100%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://app.notion.com/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th></tr></thead><tbody><tr id="3d034c0b-29c9-806e-8673-ecd19fcb8fc5"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Spring%20vs%20Spring%20Boot%203d034c0b29c9806e8673ecd19fcb8fc5.html" data-notion-page-id="3d034c0b-29c9-806e-8673-ecd19fcb8fc5" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Spring vs Spring Boot</a></td></tr><tr id="3d034c0b-29c9-8099-8ab2-d8a665efaba6"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Project%20structure%203d034c0b29c980998ab2d8a665efaba6.html" data-notion-page-id="3d034c0b-29c9-8099-8ab2-d8a665efaba6" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Project structure</a></td></tr><tr id="3d034c0b-29c9-8022-9349-fd27320bdf46"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Dependency%20injection%203d034c0b29c980229349fd27320bdf46.html" data-notion-page-id="3d034c0b-29c9-8022-9349-fd27320bdf46" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Dependency injection</a></td></tr><tr id="3d034c0b-29c9-8013-8305-de365f17fa5d"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Beans%203d034c0b29c980138305de365f17fa5d.html" data-notion-page-id="3d034c0b-29c9-8013-8305-de365f17fa5d" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Beans</a></td></tr><tr id="3d034c0b-29c9-8050-80b6-d382eaac7c91"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Components%203d034c0b29c9805080b6d382eaac7c91.html" data-notion-page-id="3d034c0b-29c9-8050-80b6-d382eaac7c91" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Components</a></td></tr><tr id="3d134c0b-29c9-801c-8ea5-d7b135ca4891"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Configurations%203d134c0b29c9801c8ea5d7b135ca4891.html" data-notion-page-id="3d134c0b-29c9-801c-8ea5-d7b135ca4891" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Configurations</a></td></tr><tr id="3d634c0b-29c9-80a2-8967-df67396f965a"><td class="cell-title"><a href="Quick%20Concepts/Untitled/Profiles%203d634c0b29c980a28967df67396f965a.html" data-notion-page-id="3d634c0b-29c9-80a2-8967-df67396f965a" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Profiles</a></td></tr></tbody></table></div><br/><br/></div><p id="3d034c0b-29c9-808e-ac69-d4e58daa55f5" class="" dir="auto">
+</p></div>
+          </div>
+        </section>
+
+        <section class="combined-section" id="section-10">
+          <div class="combined-section-header">
+            <h2 class="combined-section-title">10. Spring boot</h2>
+            <a href="../Spring boot 3d034c0b29c98012a7e6f3daf1464d9e.html" class="combined-file-link" target="_blank" rel="noopener">
+              <span>Open Original Article</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+          <div class="combined-section-content">
+            <header><div class="page-header-icon undefined"><img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqyq-9lQQNZE9gQKIw_Vgl3_tBEmypLFSGiZQFCxO97g&amp;s"/></div><h1 class="page-title" dir="auto">Spring boot</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><figure id="3d034c0b-29c9-80b6-8f93-fdeaccbaad4e" class="link-to-page"><a href="Spring%20boot/Quick%20Concepts%203d034c0b29c980b68f93fdeaccbaad4e.html" data-notion-page-id="3d034c0b-29c9-80b6-8f93-fdeaccbaad4e" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Quick Concepts</a></figure></div>
+          </div>
+        </section>
+
+    </div>
+  </article>
+  <script src="./util.js"></script>
+</body>
+</html>

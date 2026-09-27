@@ -1,0 +1,12 @@
+﻿Name
+What is a Spring Bean?
+What is the difference between @Component and @Bean?
+What is the default scope of a Spring Bean?
+Name all the Bean scopes in Spring Boot. When would you use Prototype?
+Explain the Spring Bean Lifecycle.
+What is the difference between @Configuration and @Component when defining @Bean methods?
+How do you conditionally create a Bean? (Boot specific)
+What is @Primary and when do you use it?
+ What is the difference between BeanFactory and ApplicationContext?
+"How does Spring inject dependencies? Does it check the type or the name? "
+"When multiple beans of same type existing in Spring container, how Spring decide which one to inject?"

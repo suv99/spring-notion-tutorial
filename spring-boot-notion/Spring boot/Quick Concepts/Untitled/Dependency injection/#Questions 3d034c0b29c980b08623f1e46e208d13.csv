@@ -1,0 +1,16 @@
+﻿Name
+What is the difference between Inversion of Control (IoC) and Dependency Injection (DI)?
+"Which type of injection does Spring Boot recommend, and why?"
+How does Spring Boot actually perform this injection?
+"What happens if Spring finds 2 beans of the same type, and how do you fix it?
+• "
+Can you use @Autowired on a private field? How?
+"What is a Circular Dependency, and how does Spring Boot handle it?"
+"If @Autowired is optional on a constructor, why does it still exist?"
+"What is a Bean? What is a prototype scoped Bean and singleton scoped Bean? "
+How do you handle dependency injection in unit tests without starting the whole Spring Boot application?
+Can you inject interfaces? Or must you inject concrete classes?
+"If there are two constructors in a class, how does Spring resolve constructor injection?"
+How does Lombok help in removing boilerplate code in constructor injection?
+What is the risk in constructor injection of mixing Lombok annotations or writing a manual constructor alongside a Lombok annotation?
+What is Inversion of control (IOC)

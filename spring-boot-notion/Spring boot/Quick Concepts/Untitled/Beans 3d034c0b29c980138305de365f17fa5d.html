@@ -1,0 +1,895 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Beans</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+	/* Paint a complete callout box on every PDF page fragment. */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style>
+    <link rel="stylesheet" href="../../../web-tool/beautify.css">
+</head><body><article id="3d034c0b-29c9-8013-8305-de365f17fa5d" class="page sans"><header><h1 class="page-title" dir="auto">Beans</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="3d034c0b-29c9-809d-9fd6-d05ba12ccf86" class="" dir="auto">In plain English: <strong>A Spring Bean is simply a Java object that Spring manages for you.</strong></p><p id="3d034c0b-29c9-80bc-a893-efd27c2591da" class="" dir="auto">Normally, you do <code>MyClass obj = new MyClass()</code>. With Spring Boot, you let Spring create and hold the object in its <strong>IoC Container</strong> (the &quot;warehouse&quot;). Whenever you need it, Spring hands it to you (Dependency Injection).</p><p id="3d034c0b-29c9-80b0-9187-d4fabbf0a197" class="" dir="auto">Here is the golden rule: <strong>Every Service, Repository, Controller, Configuration, and Component you write is a Bean.</strong></p><p id="3d034c0b-29c9-80f8-a3b9-c1b6c258a0bc" class="" dir="auto">But <em>how</em> do you tell Spring to manage an object? There are <strong>two distinct ways</strong>, and you must know both.</p><p id="3d034c0b-29c9-809a-a67f-fb567a7dea0a" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8027-966b-d0b975e159cf" class="" dir="auto"><strong>Method 1: Class-Level Annotations (The Easy 95% Way)</strong></h3><p id="3d034c0b-29c9-808c-b931-d7d318a270fe" class="" dir="auto">You put an annotation directly on your class. Spring scans the package, finds it, and creates a Bean automatically.</p><table id="3d034c0b-29c9-8070-b568-d0a6a7e33763" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3d034c0b-29c9-80ad-811d-d90c6ed8b2f2" dir="ltr"><th id="OfXR" class="simple-table-header-color simple-table-header"><strong>Annotation</strong></th><th id="sXXB" class="simple-table-header-color simple-table-header"><strong>What it means practically</strong></th><th id="wK{U" class="simple-table-header-color simple-table-header"><strong>When to use</strong></th></tr></thead><tbody><tr id="3d034c0b-29c9-80d3-8614-d2b72ae47226" dir="ltr"><td id="OfXR" class=""><code>@Component</code></td><td id="sXXB" class="">&quot;Spring, manage this generic class.&quot;</td><td id="wK{U" class="">Utility classes, helpers.</td></tr><tr id="3d034c0b-29c9-800b-8d68-df7e52f8562c" dir="ltr"><td id="OfXR" class=""><code>@Service</code></td><td id="sXXB" class="">&quot;Spring, manage this as business logic.&quot;</td><td id="wK{U" class="">All your business logic classes.</td></tr><tr id="3d034c0b-29c9-80fe-af88-d5d4f0b4a26c" dir="ltr"><td id="OfXR" class=""><code>@Repository</code></td><td id="sXXB" class="">&quot;Spring, manage this for DB access.&quot;</td><td id="wK{U" class="">JPA Repositories, DAO classes. (Also catches DB exceptions).</td></tr><tr id="3d034c0b-29c9-8003-8ee0-e78472772408" dir="ltr"><td id="OfXR" class=""><code>@Controller</code> / <code>@RestController</code></td><td id="sXXB" class="">&quot;Spring, manage this as a web endpoint.&quot;</td><td id="wK{U" class="">REST API controllers.</td></tr></tbody></table><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" integrity="sha512-xKcnbsdT0KMoA4yrozkqZM1XJVTrPsjdQwvigxlAlxEDu8YDvC/jl+LfVqn0fY3Vs6m2y4a89JCHEIA/Z9zpmQ==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3d034c0b-29c9-806b-9c0e-ea191e0895f3" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">// 1. Tell Spring to manage this class as a Bean
+@Service 
+public class TaxCalculator {
+
+    // No @Autowired needed on constructor for a single constructor
+    public TaxCalculator() {
+        System.out.println(&quot;TaxCalculator Bean Created!&quot;);
+    }
+
+    public double calculate(double amount) {
+        return amount * 0.18;
+    }
+}
+
+// 2. Some other class asks for it
+@RestController
+public class BillController {
+    private final TaxCalculator taxCalculator;
+
+    // Spring injects the TaxCalculator Bean here
+    public BillController(TaxCalculator taxCalculator) {
+        this.taxCalculator = taxCalculator;
+    }
+}</code></pre><h3 id="3d034c0b-29c9-8065-bde0-f6134c83e3ff" class="" dir="auto"><strong>Method 2: The </strong><code><strong>@Bean</strong></code><strong> Method (The Explicit 5% Way)</strong></h3><p id="3d034c0b-29c9-8013-82b6-e783703fa147" class="" dir="auto">You <strong>cannot</strong> put <code>@Component</code> on third-party classes (like <code>RestTemplate</code>, <code>ObjectMapper</code>, or <code>AmazonS3Client</code>) because you don&#x27;t own the source code!</p><p id="3d034c0b-29c9-80c8-897f-e23d794bf877" class="" dir="auto">The Limitation: First-Party vs. Third-Party Code</p><ul id="3d034c0b-29c9-8009-9a57-e4b7d510b3a1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>First-Party Code (Your Code):</strong> You wrote it. You can open <code>UserService.java</code> in your IDE and put <code>@Component</code> or <code>@Service</code> directly above the class definition. Spring scans your project, finds the annotation, and creates the bean.</li></ul><ul id="3d034c0b-29c9-80d7-bf80-e1bf486545d8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Third-Party Code (External Libraries):</strong> These are pre-compiled and read-only. You cannot open the class file for <code>RestTemplate</code> or <code>ObjectMapper</code> to add annotations to it.</li></ul><p id="3d034c0b-29c9-80be-9403-e7ffd52015a9" class="" dir="auto">For these, you manually tell Spring: <em>&quot;Hey, when I call this method, take the object it returns and manage it as a Bean.&quot;</em></p><p id="3d034c0b-29c9-80db-bcad-ce39471d3093" class="" dir="auto">You do this inside a class annotated with <code>@Configuration</code>.</p><h3 id="3d034c0b-29c9-801a-8479-fe3b3abb5f64" class="" dir="auto">The Solution: <code>@Configuration</code> and <code>@Bean</code></h3><p id="3d034c0b-29c9-8064-8284-ceee12e2c34c" class="" dir="auto">Because you cannot tell the third-party class to register <em>itself</em>, you must tell Spring how to create an instance of it inside your own code using a <code>@Configuration</code> class and a <code>@Bean</code> method:</p><p id="3d034c0b-29c9-80f1-b5e7-f51b88113cf1" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-807a-b418-c57135e941ad" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Configuration
+public class AppConfig{
+
+    // Spring runs this method and manages the returned instance as a bean
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+
+    @Bean
+    public ObjectMapper objectMapper(){
+        return new ObjectMapper();
+    }
+}</code></pre><p id="3d034c0b-29c9-80f9-a364-ff1f8a614892" class="" dir="auto">Once defined this way, Spring places these instances into the ApplicationContext, allowing you to inject them into your services just like any other <code>@Component</code>:</p><p id="3d034c0b-29c9-80f9-bcc5-e88a4b6e4c75" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8019-bde8-f3627315d13a" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Service
+@RequiredArgsConstructor
+public class ApiClientService{
+
+    private final RestTemplate restTemplate; // Injected automatically
+    private final ObjectMapper objectMapper; // Injected automatically
+}</code></pre><p id="3d034c0b-29c9-8051-acdb-cc30898ea348" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8084-9030-eff0679a9f9d" class="" dir="auto"><strong>The Most Important Spring Boot Twist: </strong><code><strong>@ConditionalOnMissingBean</strong></code></h3><p id="3d034c0b-29c9-8017-80d9-c77cb223d841" class="" dir="auto">This is what makes Spring Boot <em>magical</em>. When you autowire a Bean, Spring Boot says: <em>&quot;I have a default Bean, but if you create your own, I&#x27;ll use yours instead.&quot;</em></p><p id="3d034c0b-29c9-801f-9d13-e7948f87182b" class="" dir="auto">Spring Boot has auto-configuration classes running in the background for common infrastructure (like Jackson&#x27;s <code>ObjectMapper</code>, a <code>DataSource</code>, or builders).</p><p id="3d034c0b-29c9-80db-bd2a-e773715ab2ff" class="" dir="auto">Almost every default bean definition in Spring Boot is marked with this annotation:</p><p id="3d034c0b-29c9-803b-956e-c8f46a9b7292" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-802d-9776-d3fb7268fe97" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Bean
+@ConditionalOnMissingBean // &quot;Only create this if the user hasn&#x27;t created one!&quot;
+public ObjectMapper objectMapper(){
+    return new ObjectMapper();
+}</code></pre><p id="3d034c0b-29c9-80e7-8d59-c3c7a171a711" class="" dir="auto">When your application boots up:</p><ol type="1" id="3d034c0b-29c9-8053-9e5a-edb022988b05" class="numbered-list" start="1" dir="auto"><li><strong>Spring checks your code first:</strong> Did you declare your own <code>@Bean</code> for that class?</li></ol><ol type="1" id="3d034c0b-29c9-80d0-b12d-fe374cda0044" class="numbered-list" start="2" dir="auto"><li><strong>If YES:</strong> Spring registers your bean. The conditional check fails, so Spring Boot <strong>backs off</strong> and does not create its default.</li></ol><ol type="1" id="3d034c0b-29c9-8071-9b66-ff66f092fa2f" class="numbered-list" start="3" dir="auto"><li><strong>If NO:</strong> Spring Boot creates and registers its default bean for you.</li></ol><p id="3d034c0b-29c9-80bd-bba5-e78aef4078a0" class="" dir="auto">an example where Spring Boot <strong>does</strong> provide a full default bean that completely steps aside when you write yours, look at Jackson&#x27;s <code>ObjectMapper</code>:</p><p id="3d034c0b-29c9-8019-b12c-d4fd254fd959" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8035-ab34-ebaaba4f4c69" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Configuration
+public class JacksonConfig{
+
+    // The moment you define this, Spring Boot disables its auto-configured ObjectMapper
+    @Bean
+    public ObjectMapper customObjectMapper(){
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        return mapper;
+    }
+}</code></pre><p id="3d034c0b-29c9-8097-8379-f7367171ad95" class="" dir="auto">Without this method, Spring Boot supplies a default <code>ObjectMapper</code>. With this method present, Spring Boot&#x27;s <code>@ConditionalOnMissingBean</code> detects your bean, backs off, and wires your custom version everywhere across your application.</p><figure id="3d034c0b-29c9-8001-a598-ef9181bad713" class="link-to-page"><a href="Beans/Another%20ConditionalOnMissingBean%20Example%203d034c0b29c98001a598ef9181bad713.html" data-notion-page-id="3d034c0b-29c9-8001-a598-ef9181bad713" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Another ConditionalOnMissingBean Example</a></figure><p id="3d034c0b-29c9-80a4-b9f4-fa294062cda8" class="" dir="auto">
+</p><h3 id="3d034c0b-29c9-8081-a5d0-e0760a700fc5" class="" dir="auto"><strong>Bean Scopes (Singleton vs Prototype)</strong></h3><p id="3d034c0b-29c9-80bd-9b05-c0672a2d2aa1" class="" dir="auto">By default, <strong>every Bean in Spring Boot is a Singleton</strong>. This means Spring creates <strong>only one instance</strong> of that class for the entire application, and every class that injects it gets the <strong>exact same object</strong> in memory.</p><p id="3d034c0b-29c9-8047-8978-ee0f70ee2d8c" class="" dir="auto"><mark class="highlight-red" data-notion-highlight="red"><strong>Singleton Scope (Default)</strong></mark><mark class="highlight-red" data-notion-highlight="red"><br/></mark>When a bean is defined as a singleton, the Spring container creates <strong>only one shared instance</strong> of that bean for the entire application context. Every time that bean is requested or injected anywhere in your code, Spring returns the exact same object reference. This is ideal for stateless components like service layers, data access objects (DAOs), and utility beans.</p><p id="3d034c0b-29c9-8081-8509-e857413d2af6" class="" dir="auto"><mark class="highlight-red" data-notion-highlight="red"><strong>Prototype Scope</strong></mark><mark class="highlight-red" data-notion-highlight="red"><br/></mark>When a bean is configured as a prototype, a <strong>brand-new instance</strong> is created <em>every single time</em> the bean is requested from the container. If you inject or request a prototype bean in multiple places, you receive a completely distinct object instance each time. This is necessary for stateful objects where data shouldn&#x27;t be shared or overwritten globally.</p><p id="3d034c0b-29c9-80da-bef5-e2ac24248e28" class="" dir="auto"><strong>Code Example</strong></p><p id="3d034c0b-29c9-80e2-acb0-ef5e11869058" class="" dir="auto">Java</p><pre id="3d034c0b-29c9-8003-be08-df79028bb5c2" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">@Component
+// Singleton scope (default) - only one instance exists application-wide
+public class InventoryService{
+    public void checkStock(){
+        // Stateless business logic
+    }
+}
+
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+// Prototype scope - a fresh instance is generated on every request
+public class ShoppingCart{
+    private List&lt;String&gt; items = new ArrayList&lt;&gt;();
+
+    public void addItem(String item){
+        items.add(item);
+    }
+}</code></pre><p id="3d034c0b-29c9-8051-be75-c927d6a1d4ab" class="" dir="auto">In this setup, <code>InventoryService</code> is shared safely across the application since it doesn&#x27;t hold user-specific data. Conversely, <code>ShoppingCart</code> maintains user-specific state, meaning a prototype scope ensures different threads or user sessions receive independent carts rather than conflicting over the same instance.</p><h3 id="3d034c0b-29c9-80a5-baad-c6255497c933" class="" dir="auto"><strong>Bean Naming (The Silent Bug Maker)</strong></h3><p id="3d034c0b-29c9-80c9-945c-f81896456bbb" class="" dir="auto">If you don&#x27;t specify a name, Spring Boot uses <strong>camelCase</strong> of the class name.</p><ul id="3d034c0b-29c9-802d-b406-deddeb8f8e93" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>TaxCalculator</code> class → Bean name is <code>taxCalculator</code></li></ul><ul id="3d034c0b-29c9-807f-abe2-e021c778de26" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>RestTemplate</code> class → Bean name is <code>restTemplate</code></li></ul><h3 id="3d034c0b-29c9-8093-96d4-cf3d09597a24" class="" dir="auto"><mark class="highlight-orange" data-notion-highlight="orange"><strong>How does Spring inject dependencies? Does it check the type or the name? </strong></mark></h3><h3 id="3d034c0b-29c9-80b3-b8d5-fb3678a0b25b" class="" dir="auto">Resolution Order</h3><p id="3d034c0b-29c9-8057-bbf9-fe3dc6e4e49a" class="" dir="auto">When Spring encounters an injection point (like <code>@Autowired</code>), it resolves candidates through a fixed sequence:</p><ol type="1" id="3d034c0b-29c9-8047-ac92-e39541428cfb" class="numbered-list" start="1" dir="auto"><li><strong>Match by Type:</strong> Spring scans the <code>ApplicationContext</code> for all beans assignable to the target dependency&#x27;s type (including interfaces and parent classes).<ul id="3d034c0b-29c9-80be-8e91-cbcc9e4eddef" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Exactly 1 match:</strong> It injects that bean directly.</li></ul><ul id="3d034c0b-29c9-80d5-828f-f094331c1282" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>0 matches:</strong> It throws <code>NoSuchBeanDefinitionException</code>.</li></ul><ul id="3d034c0b-29c9-8072-b544-eaaa4e0c2354" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>2 or more matches:</strong> It moves to ambiguity resolution.</li></ul></li></ol><ol type="1" id="3d034c0b-29c9-80e8-ada5-c0d459120212" class="numbered-list" start="2" dir="auto"><li><strong>Check for </strong><code><strong>@Primary</strong></code><strong>:</strong> If multiple beans match the type, Spring checks whether exactly one of them is annotated with <code>@Primary</code>. If so, that bean wins.</li></ol><ol type="1" id="3d034c0b-29c9-80cd-9367-cda39d487232" class="numbered-list" start="3" dir="auto"><li><strong>Check for </strong><code><strong>@Qualifier</strong></code><strong>:</strong> If specified at the injection point (e.g., <code>@Qualifier(&quot;creditCardService&quot;)</code>), Spring matches against the qualifier value declared on the candidate bean.</li></ol><ol type="1" id="3d034c0b-29c9-8071-bd53-dbae2cb4b325" class="numbered-list" start="4" dir="auto"><li><strong>Fallback: Match by Name:</strong> If multiple candidate beans match the type and no <code>@Primary</code> or <code>@Qualifier</code> settles it, Spring compares the <strong>field or parameter name</strong> to the candidate <strong>bean names (IDs)</strong>.<ul id="3d034c0b-29c9-80d9-b6b4-dadae410e87d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">If one candidate&#x27;s bean ID matches the variable name, it injects it.</li></ul><ul id="3d034c0b-29c9-80ae-9697-ddfd1b853086" class="bulleted-list" dir="auto"><li style="list-style-type:disc">If none or multiple match, it throws <code>NoUniqueBeanDefinitionException</code>.</li></ul></li></ol><pre id="3d034c0b-29c9-80c0-ab45-d5d93d44959a" class="code code-wrap" data-notion-code-syntax="java"><code class="language-java" style="white-space:pre-wrap;word-break:break-all">public interface PaymentGateway {}
+
+@Component(&quot;stripe&quot;)
+public class StripeGateway implements PaymentGateway {}
+
+@Component(&quot;paypal&quot;)
+public class PayPalGateway implements PaymentGateway {}
+
+@Service
+public class CheckoutService {
+
+    // 1. Spring looks for beans of type PaymentGateway -&gt; finds [stripe, paypal]
+    // 2. Ambiguity exists -&gt; checks variable name: &quot;paypal&quot;
+    // 3. Injects PayPalGateway
+    @Autowired
+    private PaymentGateway paypal; 
+}</code></pre><p id="3d034c0b-29c9-8035-8122-ce33c001d527" class="" dir="auto">
+</p><p id="3d034c0b-29c9-809e-8b93-d5f7aff73d12" class="" dir="auto">
+</p><div id="3d034c0b-29c9-801e-b1dc-e58f4714554c" class="collection-content" dir="ltr"><h4 class="collection-title">Beans #Questions</h4><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:100%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://app.notion.com/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>Name</th></tr></thead><tbody><tr id="3d034c0b-29c9-800b-bcdb-fd1b04cc0475"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20a%20Spring%20Bean%203d034c0b29c9800bbcdbfd1b04cc0475.html" data-notion-page-id="3d034c0b-29c9-800b-bcdb-fd1b04cc0475" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is a Spring Bean?</a></td></tr><tr id="3d034c0b-29c9-80e2-a150-d3fdb2dacbeb"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20difference%20between%20@Component%20and%20@Bea%203d034c0b29c980e2a150d3fdb2dacbeb.html" data-notion-page-id="3d034c0b-29c9-80e2-a150-d3fdb2dacbeb" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the difference between @Component and @Bean?</a></td></tr><tr id="3d034c0b-29c9-807b-8293-cf719cfa8869"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20default%20scope%20of%20a%20Spring%20Bean%203d034c0b29c9807b8293cf719cfa8869.html" data-notion-page-id="3d034c0b-29c9-807b-8293-cf719cfa8869" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the default scope of a Spring Bean?</a></td></tr><tr id="3d034c0b-29c9-8065-8ae0-d8227355c2b0"><td class="cell-title"><a href="Beans/Beans%20#Questions/Name%20all%20the%20Bean%20scopes%20in%20Spring%20Boot%20When%20would%203d034c0b29c980658ae0d8227355c2b0.html" data-notion-page-id="3d034c0b-29c9-8065-8ae0-d8227355c2b0" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Name all the Bean scopes in Spring Boot. When would you use Prototype?</a></td></tr><tr id="3d034c0b-29c9-80f3-9e2f-fb41d3e65ab8"><td class="cell-title"><a href="Beans/Beans%20#Questions/Explain%20the%20Spring%20Bean%20Lifecycle%203d034c0b29c980f39e2ffb41d3e65ab8.html" data-notion-page-id="3d034c0b-29c9-80f3-9e2f-fb41d3e65ab8" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">Explain the Spring Bean Lifecycle.</a></td></tr><tr id="3d034c0b-29c9-805c-9032-f81225af21b1"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20difference%20between%20@Configuration%20and%20%203d034c0b29c9805c9032f81225af21b1.html" data-notion-page-id="3d034c0b-29c9-805c-9032-f81225af21b1" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is the difference between @Configuration and @Component when defining @Bean methods?</a></td></tr><tr id="3d034c0b-29c9-809e-8776-c1ebb265dc10"><td class="cell-title"><a href="Beans/Beans%20#Questions/How%20do%20you%20conditionally%20create%20a%20Bean%20(Boot%20speci%203d034c0b29c9809e8776c1ebb265dc10.html" data-notion-page-id="3d034c0b-29c9-809e-8776-c1ebb265dc10" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How do you conditionally create a Bean? (Boot specific)</a></td></tr><tr id="3d034c0b-29c9-80d5-add6-ecdee272f79b"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20@Primary%20and%20when%20do%20you%20use%20it%203d034c0b29c980d5add6ecdee272f79b.html" data-notion-page-id="3d034c0b-29c9-80d5-add6-ecdee272f79b" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">What is @Primary and when do you use it?</a></td></tr><tr id="3d034c0b-29c9-8073-b438-ffed1ba219e6"><td class="cell-title"><a href="Beans/Beans%20#Questions/What%20is%20the%20difference%20between%20BeanFactory%20and%20App%203d034c0b29c98073b438ffed1ba219e6.html" data-notion-page-id="3d034c0b-29c9-8073-b438-ffed1ba219e6" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88"> What is the difference between BeanFactory and ApplicationContext?</a></td></tr><tr id="3d034c0b-29c9-8043-827b-cf6ffdbbc6a9"><td class="cell-title"><a href="Beans/Beans%20#Questions/How%20does%20Spring%20inject%20dependencies%20Does%20it%20check%20%203d034c0b29c98043827bcf6ffdbbc6a9.html" data-notion-page-id="3d034c0b-29c9-8043-827b-cf6ffdbbc6a9" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">How does Spring inject dependencies? Does it check the type or the name? </a></td></tr><tr id="3d034c0b-29c9-80ff-a50c-dde6985db4f4"><td class="cell-title"><a href="Beans/Beans%20#Questions/When%20multiple%20beans%20of%20same%20type%20existing%20in%20Sprin%203d034c0b29c980ffa50cdde6985db4f4.html" data-notion-page-id="3d034c0b-29c9-80ff-a50c-dde6985db4f4" data-notion-space-id="96282550-e792-4f6a-8f3c-5bd229d27a88">When multiple beans of same type existing in Spring container, how Spring decide which one to inject?</a></td></tr></tbody></table></div><br/><br/></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+    <script src="../../../web-tool/util.js"></script>
+</body></html>
